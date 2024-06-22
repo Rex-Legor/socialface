@@ -1,0 +1,31 @@
+@import "variables.scss";
+
+@mixin input {
+  input {
+    font-family: $font-family;
+    height: 45px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid $color-gray-01;
+    padding: 0 10px;
+    outline: unset !important;
+    box-sizing: border-box;
+
+    &.ng-invalid.ng-touched {
+      border: 2px solid $color-error;
+    }
+
+    &:focus:not(.ng-invalid.ng-touched),
+    &:focus-visible:not(.ng-invalid.ng-touched) {
+      border-color: $color-primary;
+    }
+  }
+
+  input + span {
+    font-size: 14px;
+
+    &.sf-input__error {
+      color: $color-error;
+    }
+  }
+}

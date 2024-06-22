@@ -1,0 +1,46 @@
+<div class="sf-auth">
+  <div class="sf-auth__container sf-auth__container__side">
+    <img src="assets/images/login-side.png" alt="" />
+    <div class="sf-auth__container__side__slogan">
+      <h2>Connect with everyone</h2>
+      <p>Be part of this worldwide social network and don't miss anything.</p>
+    </div>
+  </div>
+  <div class="sf-auth__container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="sf-form-title">
+        <h1>Welcome back!</h1>
+      </div>
+      <span class="sf-span sf-span__error" *ngIf="errorMessage == '401'"
+        >Incorrect email or password</span
+      >
+      <div class="sf-input">
+        <input type="email" placeholder="Email" formControlName="email" />
+        <span
+          *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
+          class="sf-input__error"
+          >Please enter a valid email</span
+        >
+      </div>
+      <div class="sf-input">
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <span
+          *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
+          class="sf-input__error"
+          >Please enter your password</span
+        >
+      </div>
+      <a routerLink="/forgot-password">I forgot my password</a>
+      <button class="sf-button primary" [disabled]="loading$ | async">
+        Log in
+      </button>
+      <div class="sf-separator">or</div>
+      <button class="sf-button sf-button-google">Log in with Google</button>
+      <p>Don't you have an account? <a routerLink="/signup">Sign up</a></p>
+    </form>
+  </div>
+</div>

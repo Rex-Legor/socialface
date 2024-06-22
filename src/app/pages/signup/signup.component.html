@@ -1,0 +1,114 @@
+<div class="sf-auth">
+  <div class="sf-auth__container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="sf-form-title">
+        <h1>Sign up</h1>
+        <p>Become part of the worldwide community!</p>
+      </div>
+      <span
+        class="sf-span sf-span__error"
+        *ngIf="errorMessage == 'already exist'"
+        >This email doesn't exist</span
+      >
+      <div class="sf-input">
+        <input
+          type="text"
+          placeholder="First name*"
+          formControlName="firstName"
+        />
+        <span
+          *ngIf="
+            form.get('firstName')?.touched && form.get('firstName')?.invalid
+          "
+          class="sf-input__error"
+          >Please enter your first name</span
+        >
+      </div>
+      <div class="sf-input">
+        <input
+          type="text"
+          placeholder="Last name*"
+          formControlName="lastName"
+        />
+        <span
+          *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid"
+          class="sf-input__error"
+          >Please enter your last name</span
+        >
+      </div>
+      <div class="sf-input">
+        <input type="email" placeholder="Email*" formControlName="email" />
+        <span
+          *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
+          class="sf-input__error"
+          >Please enter a valid email</span
+        >
+      </div>
+      <div class="sf-input sf-datepicker">
+        <input
+          type="date"
+          min="1900-01-01"
+          max="2024-06-13"
+          [ngStyle]="{ '--placeholder': '&quot;' + 'Birthdate' + '&quot;' }"
+          ariaDescription="Birthdate"
+          formControlName="birthDate"
+        />
+
+        <span
+          *ngIf="
+            form.get('birthDate')?.touched && form.get('birthDate')?.invalid
+          "
+          class="sf-input__error"
+          >Please enter your birthdate</span
+        >
+      </div>
+
+      <div class="sf-input sf-autocomplete">
+        <input
+          placeholder="Country*"
+          sfAutocomplete
+          [autocompleteOptions]="['Mexico', 'USA', 'Canada']"
+          [inputValue]="form.get('country')?.value"
+          (optionChange)="onCountrySelect($event)"
+          formControlName="country"
+        />
+        <span
+          *ngIf="form.get('country')?.touched && form.get('country')?.invalid"
+          class="sf-input__error"
+          >Please select your country</span
+        >
+      </div>
+      <div class="sf-radio-group">
+        <label>
+          <input
+            type="radio"
+            value="browser"
+            formControlName="notificationPreference"
+          />
+          <span>Receive In browser notifications</span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="email"
+            formControlName="notificationPreference"
+          />
+          <span>Receive only email notifications</span>
+        </label>
+      </div>
+      <button class="sf-button primary" [disabled]="loading$ | async">
+        Sign up
+      </button>
+      <div class="sf-separator">or</div>
+      <button class="sf-button sf-button-google">Sign up with Google</button>
+      <p>Already have an account? <a routerLink="/login">Log in</a></p>
+    </form>
+  </div>
+  <div class="sf-auth__container sf-auth__container__side">
+    <img src="assets/images/login-side.png" alt="" />
+    <div class="sf-auth__container__side__slogan">
+      <h2>Connect with everyone</h2>
+      <p>Be part of this worldwide social network and don't miss anything.</p>
+    </div>
+  </div>
+</div>

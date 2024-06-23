@@ -1,0 +1,25 @@
+<div class="sf-post">
+  <sf-card>
+    <img [src]="avatar" sf-card-avatar alt="" />
+    <sf-card-title>{{ title }}</sf-card-title>
+    <sf-card-description>{{ subtitle }}</sf-card-description>
+  </sf-card>
+  <div class="sf-post__body">
+    <p>{{ description }}</p>
+    <img [src]="picture" *ngIf="picture" />
+  </div>
+  <div class="sf-post__footer">
+    <div class="sf-post__footer__total">
+      <span>{{ totalLikes }} People liked this</span>
+      •
+      <span>{{ totalComments }} Comments</span>
+    </div>
+    <div class="sf-post__footer__actions">
+      <button [ngClass]="{ 'sf-post-liked': liked }">
+        <i-feather name="thumbs-up"></i-feather>Like
+      </button>
+      <button><i-feather name="message-circle"></i-feather>Comment</button>
+      <button><i-feather name="share-2"></i-feather>Share</button>
+    </div>
+  </div>
+</div>

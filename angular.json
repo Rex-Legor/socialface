@@ -96,8 +96,7 @@
             "configDir": ".storybook",
             "browserTarget": "socialface:build",
             "compodoc": false,
-            "outputDir": "storybook-static",
-            "styles": ["src/styles.scss"]
+            "outputDir": "storybook-static"
           }
         }
       }

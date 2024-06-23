@@ -1,0 +1,18 @@
+<div class="sf-feed">
+  <sf-header />
+  <div class="sf-feed__sidebar"></div>
+  <div class="sf-feed__content">
+    <div class="sf-feed__content__posts">
+      <sf-post
+        *ngFor="let post of feedPosts"
+        [avatar]="post.cardPicture"
+        [description]="post.description"
+        [title]="post.cardTitle"
+        [subtitle]="post.cardSubtitle"
+        [picture]="post.picture"
+        [totalLikes]="post.totalLikes"
+        [totalComments]="post.totalComments"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+@import "../../shared/styles/variables.scss";
+
+.sf-feed {
+  padding-top: calc($header-height + 15px);
+  background-color: $color-gray-02;
+
+  &__sidebar {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    &__posts {
+      width: 50%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

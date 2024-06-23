@@ -9,6 +9,9 @@ import { AuthEffects } from './state/effects/auth.effects';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { appInterceptor } from './app.interceptor';
 import { authSelectorKey } from './state/selectors/auth.selector';
+import { feedSelectorKey } from './state/selectors/feed.selector';
+import { feedReducer } from './state/reducers/feed.reducer';
+import { FeedEffects } from './state/effects/feed.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +22,10 @@ export const appConfig: ApplicationConfig = {
       name: authSelectorKey,
       reducer: authReducer,
     }),
-    provideEffects(AuthEffects),
+    provideState({
+      name: feedSelectorKey,
+      reducer: feedReducer,
+    }),
+    provideEffects([AuthEffects, FeedEffects]),
   ],
 };

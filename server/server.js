@@ -9,8 +9,12 @@ server.use(jsonServer.bodyParser);
 
 const userData = require("./data");
 
-server.get("/api/users", (req, res, next) => {
-  res.status(200).send(userData.getUsers);
+server.get("/api/posts", (req, res, next) => {
+  res.status(200).send(userData.getPosts.posts);
+});
+
+server.get("/api/ads", (req, res, next) => {
+  res.status(200).send(userData.getAds.ads);
 });
 
 server.post("/auth/login", async (req, res, next) => {

@@ -7,4 +7,11 @@ export interface IUser {
   notificationPreference: string;
   profilePicture: string;
   birthDate: string;
+  userGroups?: IUserGroups[];
+  friends?: IUser[];
+}
+
+interface IUserGroups {
+  name: string;
+  icon: string;
 }

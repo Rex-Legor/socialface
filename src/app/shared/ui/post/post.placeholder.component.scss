@@ -1,0 +1,57 @@
+$placeholder-color: #eaeaea;
+
+.sf-post-placeholder {
+  &__content {
+    width: 100%;
+    animation: hintloading 2s ease-in-out 0s infinite reverse;
+
+    > p {
+      background-color: $placeholder-color;
+      height: 21px;
+      border-radius: 5px;
+      width: 80%;
+      margin-top: 0;
+      margin-left: 20px;
+    }
+
+    .sf-card {
+      h3,
+      p {
+        color: transparent;
+        background-color: $placeholder-color;
+        border-radius: 5px;
+      }
+
+      img {
+        background-color: $placeholder-color;
+        border: unset;
+      }
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px 10px 20px;
+      margin-top: 50px;
+
+      span {
+        background-color: $placeholder-color;
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+@keyframes hintloading {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

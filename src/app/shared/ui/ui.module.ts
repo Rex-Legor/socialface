@@ -8,6 +8,7 @@ import { CardDescriptionComponent } from './card/card-description.component';
 import { CardAvatarDirective } from './card/card-avatar.directive';
 import { IconsModule } from '../icons/icons.module';
 import { PostComponent } from './post/post.component';
+import { PostPlaceholderComponent } from './post/post.placeholder.component';
 
 const components = [
   HeaderComponent,
@@ -16,6 +17,7 @@ const components = [
   CardDescriptionComponent,
   CardAvatarDirective,
   PostComponent,
+  PostPlaceholderComponent,
 ];
 
 @NgModule({

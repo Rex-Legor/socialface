@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  ViewEncapsulation,
+} from '@angular/core';
 import { UIModule } from '../../shared/ui/ui.module';
 import { FeedState } from '../../state/reducers/feed.reducer';
 import { Store, select } from '@ngrx/store';
@@ -10,21 +15,34 @@ import {
   getFeedCombinedPosts,
   getFeedLoading,
 } from '../../state/selectors/feed.selector';
+import { getUser } from '../../state/selectors/auth.selector';
+import { IUser } from '../../shared/models/user.model';
+import { AuthState } from '../../state/reducers/auth.reducer';
+import { IconsModule } from '../../shared/icons/icons.module';
 
 @Component({
   selector: 'sf-feed',
   standalone: true,
-  imports: [CommonModule, UIModule],
+  imports: [CommonModule, UIModule, IconsModule],
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class FeedComponent implements OnDestroy {
   feedPosts: IFeedPost[] = [];
+  user: IUser | null = null;
 
   loading$: Observable<boolean>;
   postsSub: Subscription;
+  userSubscription: Subscription;
 
-  constructor(private store: Store<FeedState>) {
+  displayMenu = false;
+  displayFriends = false;
+
+  constructor(
+    private store: Store<FeedState>,
+    private authStore: Store<AuthState>,
+  ) {
     this.getData();
 
     this.loading$ = this.store.pipe(select(getFeedLoading));
@@ -34,6 +52,12 @@ export class FeedComponent implements OnDestroy {
       .subscribe((posts) => {
         this.feedPosts = posts;
       });
+
+    this.userSubscription = this.authStore
+      .pipe(select(getUser))
+      .subscribe((user) => {
+        this.user = user;
+      });
   }
 
   getData() {
@@ -41,5 +65,16 @@ export class FeedComponent implements OnDestroy {
     this.store.dispatch(getAds());
   }
 
-  ngOnDestroy() {}
+  ngOnDestroy() {
+    this.postsSub.unsubscribe();
+    this.userSubscription.unsubscribe();
+  }
+
+  toggleDisplayMenu() {
+    this.displayMenu = !this.displayMenu;
+  }
+
+  toggleDisplayFrieds() {
+    this.displayFriends = !this.displayFriends;
+  }
 }

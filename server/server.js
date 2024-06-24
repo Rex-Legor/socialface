@@ -25,7 +25,10 @@ server.post("/auth/login", async (req, res, next) => {
     data.password == "123"
   ) {
     res.status(200).send({
-      user: userData[0],
+      user: {
+        ...userData.getUsers.users[0],
+        friends: userData.getUsers.users.slice(1),
+      },
     });
   } else {
     res.status(401).send();

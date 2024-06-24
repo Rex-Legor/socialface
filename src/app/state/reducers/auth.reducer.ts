@@ -1,5 +1,5 @@
-import { createReducer, on } from '@ngrx/store';
 import * as AuthActions from '../actions/auth.actions';
+import { createReducer, on } from '@ngrx/store';
 import { IUser } from '../../shared/models/user.model';
 
 export interface AuthState {
@@ -10,9 +10,11 @@ export interface AuthState {
   errorMessage: string;
 }
 
+const userPersisted = localStorage.getItem('sf-user');
+
 export const initialState: AuthState = {
   isLoggedIn: false,
-  user: null,
+  user: userPersisted ? JSON.parse(userPersisted) : null,
   loading: false,
   errorMessage: '',
   resetPasswordSuccess: false,
@@ -26,13 +28,16 @@ export const authReducer = createReducer(
     errorMessage: '',
   })),
 
-  on(AuthActions.loginSuccess, (state, response) => ({
-    ...state,
-    user: response.user,
-    loading: false,
-    errorMessage: '',
-    isLoggedIn: true,
-  })),
+  on(AuthActions.loginSuccess, (state, response) => {
+    localStorage.setItem('sf-user', JSON.stringify(response.user));
+    return {
+      ...state,
+      user: response.user,
+      loading: false,
+      errorMessage: '',
+      isLoggedIn: true,
+    };
+  }),
 
   on(AuthActions.loginError, (state, response) => ({
     ...state,
@@ -46,13 +51,16 @@ export const authReducer = createReducer(
     errorMessage: '',
   })),
 
-  on(AuthActions.signupSuccess, (state, response) => ({
-    ...state,
-    user: response.user,
-    loading: false,
-    errorMessage: '',
-    isLoggedIn: true,
-  })),
+  on(AuthActions.signupSuccess, (state, response) => {
+    localStorage.setItem('sf-user', JSON.stringify(response.user));
+    return {
+      ...state,
+      user: response.user,
+      loading: false,
+      errorMessage: '',
+      isLoggedIn: true,
+    };
+  }),
 
   on(AuthActions.signupError, (state, response) => ({
     ...state,

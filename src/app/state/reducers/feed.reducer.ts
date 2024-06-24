@@ -27,7 +27,6 @@ export const feedReducer = createReducer(
   })),
 
   on(FeedActions.getPostsSuccess, (state, action) => {
-    console.log('here is: ', action.posts);
     return {
       ...state,
       loading: false,

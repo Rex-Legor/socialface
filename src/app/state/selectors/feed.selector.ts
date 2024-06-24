@@ -30,8 +30,6 @@ export const getFeedCombinedPosts = createSelector(
 
     let adsIndex = 0;
 
-    console.log('skajbkjkjbsdabjdsabjsad ', state);
-
     for (let index = 0; index < posts.length; index++) {
       const post = posts[index];
 
@@ -53,7 +51,7 @@ export const getFeedCombinedPosts = createSelector(
         feedPosts.push({
           id: ad.id,
           cardPicture: ad.companyPicture,
-          cardSubtitle: ad.date,
+          cardSubtitle: 'Sponsored',
           cardTitle: ad.companyName,
           date: '',
           description: ad.description,

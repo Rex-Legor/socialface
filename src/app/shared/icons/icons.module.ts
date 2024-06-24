@@ -5,6 +5,12 @@ import {
   ThumbsUp,
   MessageCircle,
   Share2,
+  Home,
+  Users,
+  Bookmark,
+  Star,
+  ShoppingCart,
+  Menu,
 } from 'angular-feather/icons';
 import { FeatherModule } from 'angular-feather';
 
@@ -14,6 +20,12 @@ const icons = {
   ThumbsUp,
   MessageCircle,
   Share2,
+  Home,
+  Users,
+  ShoppingCart,
+  Bookmark,
+  Star,
+  Menu,
 };
 
 @NgModule({

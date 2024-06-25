@@ -1,5 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ViewEncapsulation,
+} from '@angular/core';
 import { UIModule } from '../../shared/ui/ui.module';
 import { Store, select } from '@ngrx/store';
 import { AuthState } from '../../state/reducers/auth.reducer';
@@ -23,6 +27,7 @@ import { IconsModule } from '../../shared/icons/icons.module';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProfileComponent {
   posts: IPost[] = [];
@@ -33,7 +38,6 @@ export class ProfileComponent {
   userSubscription: Subscription;
 
   displayMenu = false;
-  displayFriends = false;
 
   constructor(
     private store: Store<FeedState>,
@@ -44,7 +48,11 @@ export class ProfileComponent {
     this.loading$ = this.store.pipe(select(getFeedLoading));
 
     this.postsSub = this.store.pipe(select(getFeedPosts)).subscribe((posts) => {
-      this.posts = posts;
+      this.posts = posts.filter(
+        ({ userData }) =>
+          userData.firstName == this.user?.firstName &&
+          userData.lastName == this.user.lastName,
+      );
     });
 
     this.userSubscription = this.authStore
@@ -65,9 +73,5 @@ export class ProfileComponent {
 
   toggleDisplayMenu() {
     this.displayMenu = !this.displayMenu;
-  }
-
-  toggleDisplayFrieds() {
-    this.displayFriends = !this.displayFriends;
   }
 }

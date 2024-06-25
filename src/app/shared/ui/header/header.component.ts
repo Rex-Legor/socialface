@@ -6,6 +6,7 @@ import {
   Input,
   OnDestroy,
   Output,
+  ViewEncapsulation,
 } from '@angular/core';
 import { AuthState } from '../../../state/reducers/auth.reducer';
 import { Store, select } from '@ngrx/store';
@@ -69,6 +70,7 @@ import { getUser } from '../../../state/selectors/auth.selector';
   </div>`,
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent implements OnDestroy {
   user: IUser | null = null;

@@ -42,9 +42,9 @@
     {
       "id": 4,
       "userData": {
-        "firstName": "Mary",
-        "lastName": "Encarnación",
-        "profilePicture": "https://i.pravatar.cc/150?img=5"
+        "firstName": "Ricardo",
+        "lastName": "Legorreta",
+        "profilePicture": "https://i.pravatar.cc/150?img=12"
       },
       "totalComments": 88,
       "totalLikes": 92,
@@ -120,9 +120,9 @@
     {
       "id": 10,
       "userData": {
-        "firstName": "Random",
-        "lastName": "Martinez",
-        "profilePicture": "https://i.pravatar.cc/150"
+        "firstName": "Ricardo",
+        "lastName": "Legorreta",
+        "profilePicture": "https://i.pravatar.cc/150?img=12"
       },
       "totalComments": 20,
       "totalLikes": 28,
@@ -159,9 +159,9 @@
     {
       "id": 13,
       "userData": {
-        "firstName": "Alex",
-        "lastName": "Doe",
-        "profilePicture": "https://i.pravatar.cc/150"
+        "firstName": "Ricardo",
+        "lastName": "Legorreta",
+        "profilePicture": "https://i.pravatar.cc/150?img=12"
       },
       "totalComments": 97,
       "totalLikes": 44,
@@ -237,9 +237,9 @@
     {
       "id": 19,
       "userData": {
-        "firstName": "Random",
-        "lastName": "Martinez",
-        "profilePicture": "https://i.pravatar.cc/150"
+        "firstName": "Ricardo",
+        "lastName": "Legorreta",
+        "profilePicture": "https://i.pravatar.cc/150?img=12"
       },
       "totalComments": 67,
       "totalLikes": 40,

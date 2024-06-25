@@ -1,9 +1,9 @@
-<sf-header
-  (menuButtonClick)="toggleDisplayMenu()"
-  (friendsButtonClick)="toggleDisplayFrieds()"
-/>
+<sf-header (menuButtonClick)="toggleDisplayMenu()" />
 <div class="sf-profile">
-  <div class="sf-profile__section">
+  <div
+    class="sf-profile__section"
+    [ngClass]="{ 'sf-profile__section__responsive-display': displayMenu }"
+  >
     <sf-sidebar [user]="user" />
   </div>
   <div class="sf-profile__container">
@@ -71,8 +71,5 @@
         />
       </div>
     </div>
-  </div>
-  <div class="sf-profile__section">
-    <sf-sidebar [user]="user" [displayRightComponent]="true" />
   </div>
 </div>

@@ -107,17 +107,30 @@
   }
 }
 
-@media only screen and (min-width: 1280px) and (max-width: 1366px) {
+sf-profile .sf-header {
+  &__section {
+    &__chat-button {
+      display: none !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 1281px) and (max-width: 1366px) {
   .sf-profile {
-    &__container {
-      margin-left: 20px;
-      margin-right: 20px;
+    &__content {
+      &__bio {
+        width: 300px;
+      }
     }
   }
 }
 
 @media only screen and (max-width: 1279px) {
   .sf-profile {
+    &__container {
+      margin: 20px;
+    }
+
     &__section {
       &__responsive-display:first-child {
         display: block !important;
@@ -139,31 +152,37 @@
       }
     }
   }
+
+  sf-profile .sf-header {
+    &__section {
+      > button:not(.sf-header__section__chat-button) {
+        display: block !important;
+      }
+    }
+  }
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 800px) {
   .sf-profile {
     &__section {
       &__responsive-display:last-child {
         display: block !important;
       }
-      &:last-child {
-        display: none;
-        position: fixed;
-        right: 0;
-        top: 0;
-        background-color: white;
-        height: 100%;
-        overflow-y: auto;
-        z-index: 99;
+    }
 
-        &__responsive-display {
-          display: block;
-        }
+    &__container {
+      margin: 20px;
+    }
 
-        .sf-profile__sidebar {
-          position: relative;
-        }
+    &__content {
+      flex-direction: column;
+
+      &__bio {
+        width: 100%;
+      }
+
+      &__posts {
+        max-width: unset;
       }
     }
   }

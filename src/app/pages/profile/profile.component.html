@@ -1,0 +1,78 @@
+<sf-header
+  (menuButtonClick)="toggleDisplayMenu()"
+  (friendsButtonClick)="toggleDisplayFrieds()"
+/>
+<div class="sf-profile">
+  <div class="sf-profile__section">
+    <sf-sidebar [user]="user" />
+  </div>
+  <div class="sf-profile__container">
+    <div class="sf-profile__pictures"></div>
+    <div class="sf-profile__content">
+      <div class="sf-profile__content__bio">
+        <div class="sf-profile__content__bio__info">
+          <h4>About me</h4>
+          <p>
+            "This is a placeholder text for design purposes. It represents the
+            about me text from the user that usually gets edited here"
+          </p>
+          <div class="sf-profile__content__bio__info__details">
+            <ul>
+              <li>
+                <i-feather name="map-pin"></i-feather>
+                <span>Fake Location, World</span>
+              </li>
+              <li>
+                <i-feather name="globe"></i-feather>
+                <span>fakeaddress.com/user</span>
+              </li>
+              <li>
+                <i-feather name="calendar"></i-feather>
+                <span>Joined something between 1993 and 2024</span>
+              </li>
+              <li>
+                <i-feather name="briefcase"></i-feather>
+                <span>Works at Unosquare</span>
+              </li>
+              <li>
+                <i-feather name="heart"></i-feather>
+                <span>Warried to his wife</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sf-profile__content__bio__pictures">
+          <h4>My photos</h4>
+          <div>
+            <img src="https://picsum.photos/300?random=10" alt="" />
+            <img src="https://picsum.photos/300?random=11" alt="" />
+            <img src="https://picsum.photos/300?random=12" alt="" />
+            <img src="https://picsum.photos/300?random=13" alt="" />
+            <img src="https://picsum.photos/300?random=14" alt="" />
+            <img src="https://picsum.photos/300?random=15" alt="" />
+            <img src="https://picsum.photos/300?random=16" alt="" />
+            <img src="https://picsum.photos/300?random=17" alt="" />
+            <img src="https://picsum.photos/300?random=18" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="sf-profile__content__posts">
+        <h3>My posts</h3>
+        <sf-post-placeholder *ngIf="loading$ | async" />
+        <sf-post
+          *ngFor="let post of posts"
+          [avatar]="post.userData.profilePicture"
+          [description]="post.description"
+          title="{{ post.userData.firstName }} {{ post.userData.lastName }}"
+          [subtitle]="post.date"
+          [picture]="post.picture"
+          [totalLikes]="post.totalLikes"
+          [totalComments]="post.totalComments"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="sf-profile__section">
+    <sf-sidebar [user]="user" [displayRightComponent]="true" />
+  </div>
+</div>

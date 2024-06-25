@@ -12,136 +12,10 @@
     flex-shrink: 0;
   }
 
-  &__sidebar {
-    position: fixed;
-    top: $header-height;
-    width: 350px;
-    height: 100%;
-    border-right: 1px solid $color-gray-01;
-    padding: 20px;
-    box-sizing: border-box;
-
-    &__right {
-      left: unset;
-      border-right: unset;
-      border-left: 1px solid $color-gray-01;
-
-      ul li {
-        position: relative;
-
-        &::before {
-          content: "";
-          width: 8px;
-          height: 8px;
-          background-color: $color-green;
-          position: absolute;
-          left: 34px;
-          bottom: 5px;
-          border-radius: 50%;
-          border: 1px solid $color-gray-01;
-        }
-      }
-    }
-
-    h3 {
-      margin: 0;
-      color: gray;
-      font-weight: 500;
-    }
-
-    &__menu {
-      margin-top: 0;
-      padding-bottom: 20px;
-      border-bottom: 1px solid $color-gray-01;
-
-      & + h3 {
-        padding-top: 10px;
-      }
-
-      li:nth-child(1) > div {
-        background-color: rgba($color-primary, 0.4);
-        i-feather {
-          color: $color-primary;
-          fill: $color-primary;
-        }
-      }
-      li:nth-child(2) > div {
-        background-color: rgba($color-green, 0.4);
-        i-feather {
-          color: $color-green;
-          fill: $color-green;
-        }
-      }
-      li:nth-child(3) > div {
-        background-color: rgba($color-secondary, 0.4);
-        i-feather {
-          color: $color-secondary;
-          fill: $color-secondary;
-        }
-      }
-      li:nth-child(4) > div {
-        background-color: rgba($color-primary-dark, 0.4);
-        i-feather {
-          color: $color-primary-dark;
-          fill: $color-primary-dark;
-        }
-      }
-      li:nth-child(5) > div {
-        background-color: rgba($color-error, 0.4);
-        i-feather {
-          color: $color-error;
-          fill: $color-error;
-        }
-      }
-    }
-
-    ul {
-      padding-left: 0;
-
-      li {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        padding: 5px 0 5px 5px;
-
-        &:hover {
-          background-color: #e7e7e7;
-          cursor: pointer;
-        }
-
-        > div {
-          background-color: $color-secondary;
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          i-feather {
-            width: 20px;
-            height: 20px;
-          }
-        }
-
-        span {
-          font-size: 16px;
-          font-weight: 600;
-        }
-
-        img {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-        }
-      }
-    }
-  }
-
   &__content {
     display: flex;
     justify-content: center;
-    margin: 20px 80px 0 80px;
+    margin: 20px 80px 30px 80px;
 
     &__posts {
       max-width: 700px;
@@ -151,15 +25,6 @@
       gap: 20px;
     }
   }
-}
-
-@media only screen and (min-device-width: 0px) and (max-device-width: 700px) and (orientation: portrait) {
-}
-
-@media only screen and (min-height: 300px) and (max-height: 700px) and (orientation: landscape) {
-}
-
-@media only screen and (min-width: 600px) and (min-height: 700px) and (max-height: 1024px) and (orientation: portrait) {
 }
 
 @media only screen and (min-width: 1280px) and (max-width: 1366px) {
@@ -177,15 +42,18 @@
       &__responsive-display:first-child {
         display: block !important;
       }
+
       &:first-child {
         display: none;
-
         position: fixed;
         left: 0;
+        top: 0;
         background-color: white;
         height: 100%;
+        overflow-y: auto;
+        z-index: 99;
 
-        &__sidebar {
+        .sf-feed__sidebar {
           position: relative;
         }
       }
@@ -203,14 +71,17 @@
         display: none;
         position: fixed;
         right: 0;
+        top: 0;
         background-color: white;
         height: 100%;
+        overflow-y: auto;
+        z-index: 99;
 
         &__responsive-display {
           display: block;
         }
 
-        &__sidebar {
+        .sf-feed__sidebar {
           position: relative;
         }
       }

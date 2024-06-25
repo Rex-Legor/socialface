@@ -36,10 +36,34 @@ import { getUser } from '../../../state/selectors/auth.selector';
         <i-feather name="message-circle"></i-feather>
       </button>
       <div class="sf-header__section__profile">
-        <button>
+        <button (click)="toggleDisplayProfileOptions()">
           <img [src]="user?.profilePicture" alt="" />
         </button>
-        <div class="sf-header__section__profile__options"></div>
+        <div
+          class="sf-header__section__profile__options"
+          *ngIf="displayProfileOptions"
+        >
+          <ul>
+            <li>
+              <a routerLink="/profile">
+                <img [src]="user?.profilePicture" alt="" />
+                <span>{{ user?.firstName }} {{ user?.lastName }}</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/settings">
+                <div><i-feather name="settings"></i-feather></div>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div><i-feather name="log-out"></i-feather></div>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>`,
@@ -48,8 +72,8 @@ import { getUser } from '../../../state/selectors/auth.selector';
 })
 export class HeaderComponent implements OnDestroy {
   user: IUser | null = null;
-
   userSubscription: Subscription;
+  displayProfileOptions = false;
 
   @Output() menuButtonClick = new EventEmitter<void>();
   @Output() friendsButtonClick = new EventEmitter<void>();
@@ -60,6 +84,10 @@ export class HeaderComponent implements OnDestroy {
       .subscribe((user) => {
         this.user = user;
       });
+  }
+
+  toggleDisplayProfileOptions() {
+    this.displayProfileOptions = !this.displayProfileOptions;
   }
 
   ngOnDestroy() {

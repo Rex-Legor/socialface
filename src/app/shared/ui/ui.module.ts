@@ -9,6 +9,8 @@ import { CardAvatarDirective } from './card/card-avatar.directive';
 import { IconsModule } from '../icons/icons.module';
 import { PostComponent } from './post/post.component';
 import { PostPlaceholderComponent } from './post/post.placeholder.component';
+import { RouterModule } from '@angular/router';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const components = [
   HeaderComponent,
@@ -18,11 +20,18 @@ const components = [
   CardAvatarDirective,
   PostComponent,
   PostPlaceholderComponent,
+  SidebarComponent,
 ];
 
 @NgModule({
   declarations: components,
   exports: components,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, IconsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    IconsModule,
+    RouterModule,
+  ],
 })
 export class UIModule {}

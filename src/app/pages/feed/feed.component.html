@@ -7,47 +7,7 @@
     class="sf-feed__section"
     [ngClass]="{ 'sf-feed__section__responsive-display': displayMenu }"
   >
-    <div class="sf-feed__sidebar">
-      <ul class="sf-feed__sidebar__menu">
-        <li>
-          <div>
-            <i-feather name="home"></i-feather>
-          </div>
-          <span>Home</span>
-        </li>
-        <li>
-          <div>
-            <i-feather name="users"></i-feather>
-          </div>
-          <span>Frieds</span>
-        </li>
-        <li>
-          <div>
-            <i-feather name="shopping-cart"></i-feather>
-          </div>
-          <span>Marketplace</span>
-        </li>
-        <li>
-          <div>
-            <i-feather name="bookmark"></i-feather>
-          </div>
-          <span>Saved</span>
-        </li>
-        <li>
-          <div>
-            <i-feather name="star"></i-feather>
-          </div>
-          <span>Favourites</span>
-        </li>
-      </ul>
-      <h3>User groups</h3>
-      <ul *ngIf="user?.userGroups">
-        <li *ngFor="let group of user?.userGroups">
-          <img [src]="group.icon" alt="" />
-          <span>{{ group.name }}</span>
-        </li>
-      </ul>
-    </div>
+    <sf-sidebar [user]="user" />
   </div>
   <div class="sf-feed__content">
     <div class="sf-feed__content__posts">
@@ -68,14 +28,6 @@
     class="sf-feed__section"
     [ngClass]="{ 'sf-feed__section__responsive-display': displayFriends }"
   >
-    <div class="sf-feed__sidebar sf-feed__sidebar__right">
-      <h3>Active Friends</h3>
-      <ul *ngIf="user?.friends">
-        <li *ngFor="let friend of user?.friends">
-          <img [src]="friend.profilePicture" alt="" />
-          <span>{{ friend.firstName }} {{ friend.lastName }}</span>
-        </li>
-      </ul>
-    </div>
+    <sf-sidebar [user]="user" [displayRightComponent]="true" />
   </div>
 </div>

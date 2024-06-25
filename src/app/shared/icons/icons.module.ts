@@ -11,6 +11,13 @@ import {
   Star,
   ShoppingCart,
   Menu,
+  Settings,
+  LogOut,
+  MapPin,
+  Globe,
+  Calendar,
+  Briefcase,
+  Heart,
 } from 'angular-feather/icons';
 import { FeatherModule } from 'angular-feather';
 
@@ -26,6 +33,13 @@ const icons = {
   Bookmark,
   Star,
   Menu,
+  Settings,
+  LogOut,
+  MapPin,
+  Globe,
+  Calendar,
+  Briefcase,
+  Heart,
 };
 
 @NgModule({

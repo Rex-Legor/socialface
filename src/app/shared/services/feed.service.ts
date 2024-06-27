@@ -13,4 +13,12 @@ export class FeedService {
   getAds() {
     return this.httpClient.get<IAd[]>('/api/ads');
   }
+
+  postComment(post: IPost) {
+    return this.httpClient.post<IAd[]>('/api/post/comment', post);
+  }
+
+  postLike(post: IPost) {
+    return this.httpClient.post<IAd[]>('/api/post/like', post);
+  }
 }

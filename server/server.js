@@ -13,6 +13,14 @@ server.get("/api/posts", (req, res, next) => {
   res.status(200).send(userData.getPosts.posts);
 });
 
+server.post("/api/post/comment", async (req, res, next) => {
+  res.status(201).send();
+});
+
+server.post("/api/post/like", async (req, res, next) => {
+  res.status(201).send();
+});
+
 server.get("/api/ads", (req, res, next) => {
   res.status(200).send(userData.getAds.ads);
 });

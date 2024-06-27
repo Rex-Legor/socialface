@@ -6,6 +6,10 @@ enum FeedActionTypes {
   GetPostsSuccess = '[Feed Page] Get Posts Success',
   GetAds = '[Feed Page] Get Ads',
   GetAdsSuccess = '[Feed Page] Get Ads Success',
+  PostComment = '[Feed Page] Post Comment Success',
+  PostCommentSuccess = '[Feed Page] Post Comment',
+  PostLike = '[Feed Page] Post Like',
+  PostLikeSuccess = '[Feed Page] Post Like Success',
 }
 
 export const getPosts = createAction(FeedActionTypes.GetPosts);
@@ -15,7 +19,23 @@ export const getPostsSuccess = createAction(
 );
 
 export const getAds = createAction(FeedActionTypes.GetAds);
+export const postComment = createAction(
+  FeedActionTypes.PostComment,
+  props<{ post: IPost }>(),
+);
+export const postLike = createAction(
+  FeedActionTypes.PostLike,
+  props<{ post: IPost }>(),
+);
 export const getAdsSuccess = createAction(
   FeedActionTypes.GetAdsSuccess,
   props<{ ads: IAd[] }>(),
+);
+export const postCommentSuccess = createAction(
+  FeedActionTypes.PostCommentSuccess,
+  props<{ post: IPost }>(),
+);
+export const postLikeSuccess = createAction(
+  FeedActionTypes.PostLikeSuccess,
+  props<{ post: IPost }>(),
 );

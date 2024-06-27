@@ -9,8 +9,13 @@ import { UIModule } from '../../shared/ui/ui.module';
 import { FeedState } from '../../state/reducers/feed.reducer';
 import { Store, select } from '@ngrx/store';
 import { Observable, Subscription, tap } from 'rxjs';
-import { IFeedPost, IPost } from '../../shared/models/feed.model';
-import { getAds, getPosts } from '../../state/actions/feed.actions';
+import { IPost, IPostComment } from '../../shared/models/feed.model';
+import {
+  getAds,
+  getPosts,
+  postComment,
+  postLike,
+} from '../../state/actions/feed.actions';
 import {
   getFeedCombinedPosts,
   getFeedLoading,
@@ -29,7 +34,7 @@ import { IconsModule } from '../../shared/icons/icons.module';
   encapsulation: ViewEncapsulation.None,
 })
 export class FeedComponent implements OnDestroy {
-  feedPosts: IFeedPost[] = [];
+  feedPosts: IPost[] = [];
   user: IUser | null = null;
 
   loading$: Observable<boolean>;
@@ -50,6 +55,7 @@ export class FeedComponent implements OnDestroy {
     this.postsSub = this.store
       .pipe(select(getFeedCombinedPosts))
       .subscribe((posts) => {
+        console.log('first post: ', posts.length > 0 ? posts[0].id : '');
         this.feedPosts = posts;
       });
 
@@ -77,4 +83,26 @@ export class FeedComponent implements OnDestroy {
   toggleDisplayFrieds() {
     this.displayFriends = !this.displayFriends;
   }
+
+  likePost(post: IPost) {
+    const newPost = { ...post };
+    newPost.liked = !post.liked;
+    this.store.dispatch(postLike({ post: newPost }));
+  }
+
+  commentPost(post: IPost, comment: string) {
+    const newPost = { ...post };
+    const newComment: IPostComment = {
+      comment,
+      postId: post.id,
+      userData: this.user as IUser,
+    };
+    newPost.comments = post.comments
+      ? post.comments.concat([newComment])
+      : [newComment];
+
+    this.store.dispatch(postComment({ post: newPost }));
+  }
+
+  trackByPostId = (index: number, item: IPost) => item.id;
 }

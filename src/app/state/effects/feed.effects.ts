@@ -32,6 +32,32 @@ export class FeedEffects {
     { useEffectsErrorHandler: true },
   );
 
+  postComment$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(FeedActions.postComment),
+        exhaustMap(({ post }) =>
+          this.feedService
+            .postComment(post)
+            .pipe(map(() => FeedActions.postCommentSuccess({ post }))),
+        ),
+      ),
+    { useEffectsErrorHandler: true },
+  );
+
+  postLike$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(FeedActions.postLike),
+        exhaustMap(({ post }) =>
+          this.feedService
+            .postLike(post)
+            .pipe(map(() => FeedActions.postLikeSuccess({ post }))),
+        ),
+      ),
+    { useEffectsErrorHandler: true },
+  );
+
   constructor(
     private feedService: FeedService,
     private actions$: Actions,

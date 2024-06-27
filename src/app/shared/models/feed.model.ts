@@ -11,15 +11,18 @@ interface IPostCommon {
 
 export interface IPost extends IPostCommon {
   userData: IUser;
+  liked: boolean;
+  comments?: IPostComment[];
+  isSponsored?: boolean;
+}
+
+export interface IPostComment {
+  userData: IUser;
+  postId: string;
+  comment: string;
 }
 
 export interface IAd extends IPostCommon {
   companyName: string;
   companyPicture: string;
-}
-
-export interface IFeedPost extends IPostCommon {
-  cardTitle: string;
-  cardSubtitle: string;
-  cardPicture: string;
 }

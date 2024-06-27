@@ -18,6 +18,7 @@ import {
   Calendar,
   Briefcase,
   Heart,
+  Send,
 } from 'angular-feather/icons';
 import { FeatherModule } from 'angular-feather';
 
@@ -40,6 +41,7 @@ const icons = {
   Calendar,
   Briefcase,
   Heart,
+  Send,
 };
 
 @NgModule({

@@ -6,12 +6,14 @@ export interface FeedState {
   posts: IPost[];
   ads: IAd[];
   loading: boolean;
+  errorFetching: boolean;
 }
 
 export const initialState: FeedState = {
   posts: [],
   ads: [],
   loading: true,
+  errorFetching: false,
 };
 
 export const feedReducer = createReducer(
@@ -26,6 +28,14 @@ export const feedReducer = createReducer(
     loading: true,
   })),
 
+  on(FeedActions.postComment, (state) => ({
+    ...state,
+  })),
+
+  on(FeedActions.postLike, (state) => ({
+    ...state,
+  })),
+
   on(FeedActions.getPostsSuccess, (state, action) => {
     return {
       ...state,
@@ -38,5 +48,27 @@ export const feedReducer = createReducer(
     ...state,
     loading: false,
     ads: action.ads,
+  })),
+
+  on(FeedActions.postCommentSuccess, (state, action) => ({
+    ...state,
+    posts: state.posts.map((post) => {
+      if (post.id == action.post.id) {
+        return action.post;
+      }
+
+      return post;
+    }),
+  })),
+
+  on(FeedActions.postLikeSuccess, (state, action) => ({
+    ...state,
+    posts: state.posts.map((post) => {
+      if (post.id == action.post.id) {
+        return action.post;
+      }
+
+      return post;
+    }),
   })),
 );

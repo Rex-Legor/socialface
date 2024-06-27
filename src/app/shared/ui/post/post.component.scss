@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .sf-post {
   box-shadow: $box-shadow;
@@ -30,11 +31,12 @@
 
     &__actions {
       border-top: 1px solid $color-gray-01;
-      padding: 10px 0 5px 0;
+      border-bottom: 1px solid $color-gray-01;
+      padding: 10px 0;
       display: flex;
       justify-content: space-between;
 
-      button {
+      > button {
         display: flex;
         align-items: center;
         gap: 7px;
@@ -52,6 +54,74 @@
 
         &:hover {
           background-color: rgba($color-gray-01, 0.3);
+        }
+      }
+    }
+
+    &__comment_list {
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding-top: 10px;
+
+          > div {
+            border-radius: 10px;
+            background-color: $color-gray-02;
+            padding: 10px;
+
+            h4 {
+              margin: 0;
+            }
+
+            p {
+              margin: 10px 0 0 0;
+            }
+          }
+        }
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+
+    &__comment {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      position: relative;
+      @include input;
+
+      input {
+        background-color: $color-gray-02;
+        border-radius: 25px;
+        width: 100%;
+      }
+
+      button {
+        position: absolute;
+        right: 20px;
+        border: unset;
+        background-color: unset;
+        color: gray;
+        height: 26px;
+
+        i-feather {
+          transform: rotateZ(45deg);
+        }
+
+        &:hover {
+          cursor: pointer;
         }
       }
     }

@@ -13,14 +13,10 @@
     <div class="sf-feed__content__posts">
       <sf-post-placeholder *ngIf="loading$ | async" />
       <sf-post
-        *ngFor="let post of feedPosts"
-        [avatar]="post.cardPicture"
-        [description]="post.description"
-        [title]="post.cardTitle"
-        [subtitle]="post.cardSubtitle"
-        [picture]="post.picture"
-        [totalLikes]="post.totalLikes"
-        [totalComments]="post.totalComments"
+        *ngFor="let post of feedPosts; trackBy: trackByPostId"
+        [post]="post"
+        (commentChange)="commentPost(post, $event)"
+        (likeChange)="likePost(post)"
       />
     </div>
   </div>

@@ -11,6 +11,7 @@
   </div>
   <div class="sf-feed__content">
     <div class="sf-feed__content__posts">
+      <sf-post-refresh (onRefresh)="getData()" *ngIf="errorFetching$ | async" />
       <sf-post-placeholder *ngIf="loading$ | async" />
       <sf-post
         *ngFor="let post of feedPosts; trackBy: trackByPostId"

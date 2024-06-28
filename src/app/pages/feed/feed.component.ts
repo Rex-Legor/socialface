@@ -18,6 +18,7 @@ import {
 } from '../../state/actions/feed.actions';
 import {
   getFeedCombinedPosts,
+  getFeedErrorFetching,
   getFeedLoading,
 } from '../../state/selectors/feed.selector';
 import { getUser } from '../../state/selectors/auth.selector';
@@ -38,6 +39,7 @@ export class FeedComponent implements OnDestroy {
   user: IUser | null = null;
 
   loading$: Observable<boolean>;
+  errorFetching$: Observable<boolean>;
   postsSub: Subscription;
   userSubscription: Subscription;
 
@@ -51,11 +53,11 @@ export class FeedComponent implements OnDestroy {
     this.getData();
 
     this.loading$ = this.store.pipe(select(getFeedLoading));
+    this.errorFetching$ = this.store.pipe(select(getFeedErrorFetching));
 
     this.postsSub = this.store
       .pipe(select(getFeedCombinedPosts))
       .subscribe((posts) => {
-        console.log('first post: ', posts.length > 0 ? posts[0].id : '');
         this.feedPosts = posts;
       });
 

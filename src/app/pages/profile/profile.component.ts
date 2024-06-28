@@ -22,6 +22,7 @@ import {
   getFeedLoading,
   getFeedCombinedPosts,
   getFeedPosts,
+  getFeedErrorFetching,
 } from '../../state/selectors/feed.selector';
 import { IconsModule } from '../../shared/icons/icons.module';
 
@@ -38,6 +39,7 @@ export class ProfileComponent {
   user: IUser | null = null;
 
   loading$: Observable<boolean>;
+  errorFetching$: Observable<boolean>;
   postsSub: Subscription;
   userSubscription: Subscription;
 
@@ -50,6 +52,7 @@ export class ProfileComponent {
     this.getData();
 
     this.loading$ = this.store.pipe(select(getFeedLoading));
+    this.errorFetching$ = this.store.pipe(select(getFeedErrorFetching));
 
     this.postsSub = this.store.pipe(select(getFeedPosts)).subscribe((posts) => {
       this.posts = posts.filter(

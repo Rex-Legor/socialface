@@ -11,6 +11,11 @@ export const getFeedLoading = createSelector(
   (state: FeedState) => state.loading,
 );
 
+export const getFeedErrorFetching = createSelector(
+  getFeedState,
+  (state: FeedState) => state.errorFetching,
+);
+
 export const getFeedPosts = createSelector(
   getFeedState,
   (state: FeedState) => state.posts,
@@ -45,8 +50,8 @@ export const getFeedCombinedPosts = createSelector(
           picture: ad.picture,
           totalComments: ad.totalComments,
           totalLikes: ad.totalLikes,
-          comments: [],
-          liked: false,
+          comments: ad.comments || [],
+          liked: ad.liked,
           isSponsored: true,
           userData: {
             profilePicture: ad.companyPicture,

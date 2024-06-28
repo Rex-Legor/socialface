@@ -64,6 +64,11 @@
       </div>
       <div class="sf-profile__content__posts">
         <h3>My posts</h3>
+
+        <sf-post-refresh
+          (onRefresh)="getData()"
+          *ngIf="errorFetching$ | async"
+        />
         <sf-post-placeholder *ngIf="loading$ | async" />
         <sf-post
           *ngFor="let post of posts; trackBy: trackByPostId"

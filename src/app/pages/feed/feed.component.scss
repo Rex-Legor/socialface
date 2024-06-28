@@ -18,8 +18,8 @@
     margin: 20px 80px 30px 80px;
 
     &__posts {
+      min-width: 500px;
       max-width: 700px;
-
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -56,6 +56,12 @@
         .sf-feed__sidebar {
           position: relative;
         }
+      }
+    }
+
+    &__content {
+      &__posts {
+        min-width: unset;
       }
     }
   }

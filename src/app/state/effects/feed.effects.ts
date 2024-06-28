@@ -11,9 +11,10 @@ export class FeedEffects {
       this.actions$.pipe(
         ofType(FeedActions.getPosts),
         exhaustMap(() =>
-          this.feedService
-            .getPosts()
-            .pipe(map((posts) => FeedActions.getPostsSuccess({ posts }))),
+          this.feedService.getPosts().pipe(
+            map((posts) => FeedActions.getPostsSuccess({ posts })),
+            catchError(() => of(FeedActions.getPostsError())),
+          ),
         ),
       ),
     { useEffectsErrorHandler: true },
@@ -24,9 +25,10 @@ export class FeedEffects {
       this.actions$.pipe(
         ofType(FeedActions.getAds),
         exhaustMap(() =>
-          this.feedService
-            .getAds()
-            .pipe(map((ads) => FeedActions.getAdsSuccess({ ads }))),
+          this.feedService.getAds().pipe(
+            map((ads) => FeedActions.getAdsSuccess({ ads })),
+            catchError(() => of(FeedActions.getAdsError())),
+          ),
         ),
       ),
     { useEffectsErrorHandler: true },

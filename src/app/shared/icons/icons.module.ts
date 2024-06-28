@@ -19,6 +19,7 @@ import {
   Briefcase,
   Heart,
   Send,
+  RefreshCw,
 } from 'angular-feather/icons';
 import { FeatherModule } from 'angular-feather';
 
@@ -42,6 +43,7 @@ const icons = {
   Briefcase,
   Heart,
   Send,
+  RefreshCw,
 };
 
 @NgModule({

@@ -7,12 +7,12 @@ interface IPostCommon {
   date: string;
   description: string;
   picture: string;
+  liked?: boolean;
+  comments?: IPostComment[];
 }
 
 export interface IPost extends IPostCommon {
   userData: IUser;
-  liked: boolean;
-  comments?: IPostComment[];
   isSponsored?: boolean;
 }
 

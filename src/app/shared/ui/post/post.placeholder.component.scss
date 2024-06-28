@@ -3,7 +3,7 @@ $placeholder-color: #eaeaea;
 .sf-post-placeholder {
   &__content {
     width: 100%;
-    animation: hintloading 2s ease-in-out 0s infinite reverse;
+    animation: placeholderLoading 2s ease-in-out 0s infinite reverse;
 
     > p {
       background-color: $placeholder-color;
@@ -44,7 +44,7 @@ $placeholder-color: #eaeaea;
   }
 }
 
-@keyframes hintloading {
+@keyframes placeholderloading {
   0% {
     opacity: 0.5;
   }

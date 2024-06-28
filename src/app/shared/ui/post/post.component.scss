@@ -127,3 +127,32 @@
     }
   }
 }
+
+.sf-post-refresh {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px;
+
+  p,
+  h3 {
+    margin: 0;
+    text-align: center;
+  }
+
+  p {
+    max-width: 80%;
+  }
+
+  img {
+    height: 200px;
+  }
+
+  button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}

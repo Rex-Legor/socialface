@@ -48,6 +48,11 @@
       padding-top: 10px;
     }
 
+    li.active {
+      background-color: rgba($color-primary, 0.1);
+      border-radius: 5px;
+    }
+
     li:nth-child(1) > div {
       background-color: rgba($color-primary, 0.4);
       i-feather {
@@ -101,6 +106,7 @@
       &:hover {
         background-color: #e7e7e7;
         cursor: pointer;
+        border-radius: 5px;
       }
 
       > div {

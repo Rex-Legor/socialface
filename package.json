@@ -25,6 +25,7 @@
     "@ngrx/effects": "^17.2.0",
     "@ngrx/store": "^17.2.0",
     "angular-feather": "^6.5.1",
+    "ngx-mask": "^17.0.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

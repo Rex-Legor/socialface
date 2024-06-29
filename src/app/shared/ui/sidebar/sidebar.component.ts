@@ -6,6 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { IUser } from '../../models/user.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'sf-sidebar',
@@ -17,4 +18,6 @@ import { IUser } from '../../models/user.model';
 export class SidebarComponent {
   @Input() displayRightComponent = false;
   @Input() user: IUser | null = null;
+
+  constructor(public router: Router) {}
 }

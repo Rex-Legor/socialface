@@ -6,6 +6,7 @@ import {
 } from '../models/auth.model';
 import { HttpClient } from '@angular/common/http';
 import { catchError, of } from 'rxjs';
+import { IUser } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -19,10 +20,20 @@ export class AuthService {
   }
 
   signup(email: string) {
-    return this.httpClient.post<string>('/auth/signup', { email });
+    return this.httpClient.post<IAuthSuccessResponse>('/auth/signup', {
+      email,
+    });
   }
 
   resetPassword(email: string) {
     return this.httpClient.post<string>('/auth/reset-password', { email });
+  }
+
+  updateUser(user: IUser) {
+    return this.httpClient.put<string>(
+      '/api/user/update',
+      { user },
+      { params: { id: user.id } },
+    );
   }
 }

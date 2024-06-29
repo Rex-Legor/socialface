@@ -12,6 +12,8 @@ enum AuthActionTypes {
   ResetPassword = '[ResetPassword Page] Signup',
   ResetPasswordSuccess = '[ResetPassword Page] ResetPassword Success',
   ResetPasswordError = '[ResetPassword Page] ResetPassword Error',
+  UpdateUser = '[Settings Page] Update User',
+  UpdateUserSuccess = '[Settings Page] Update User Success',
 }
 
 export const login = createAction(
@@ -45,13 +47,25 @@ export const signupError = createAction(
 );
 
 export const resetPassword = createAction(
-  AuthActionTypes.SignUp,
+  AuthActionTypes.ResetPassword,
   props<{ email: string }>(),
 );
 
-export const resetPasswordSuccess = createAction(AuthActionTypes.SignUpSuccess);
+export const resetPasswordSuccess = createAction(
+  AuthActionTypes.ResetPasswordSuccess,
+);
 
 export const resetPasswordError = createAction(
-  AuthActionTypes.SignUpError,
+  AuthActionTypes.ResetPasswordError,
   props<{ errorMessage: string }>(),
+);
+
+export const updateUser = createAction(
+  AuthActionTypes.UpdateUser,
+  props<{ user: IUser }>(),
+);
+
+export const updateUserSuccess = createAction(
+  AuthActionTypes.UpdateUserSuccess,
+  props<{ user: IUser }>(),
 );

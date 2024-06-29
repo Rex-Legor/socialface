@@ -5,6 +5,8 @@
       "firstName": "Ricardo",
       "lastName": "Legorreta",
       "email": "rex@mail.com",
+      "country": "Mexico",
+      "birthDate": "02-20-1993",
       "profilePicture": "https://i.pravatar.cc/150?img=12",
       "userGroups": [
         {

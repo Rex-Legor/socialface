@@ -1,6 +1,6 @@
 <div class="sf-sidebar" *ngIf="!displayRightComponent">
   <ul class="sf-sidebar__menu">
-    <li routerLink="/feed">
+    <li routerLink="/feed" [ngClass]="{ active: router.url == '/feed' }">
       <div>
         <i-feather name="home"></i-feather>
       </div>

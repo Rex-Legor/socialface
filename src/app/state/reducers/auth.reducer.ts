@@ -91,4 +91,12 @@ export const authReducer = createReducer(
     resetPasswordSuccess: false,
     isLoggedIn: false,
   })),
+
+  on(AuthActions.updateUserSuccess, (state, response) => {
+    localStorage.setItem('sf-user', JSON.stringify(response.user));
+    return {
+      ...state,
+      user: response.user,
+    };
+  }),
 );

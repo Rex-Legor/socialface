@@ -9,6 +9,8 @@ export interface IUser {
   birthDate: string;
   userGroups?: IUserGroups[];
   friends?: IUser[];
+  phoneNumber?: string;
+  profileVisibility?: boolean;
 }
 
 interface IUserGroups {

@@ -29,7 +29,9 @@ export class AuthEffects {
         ofType(AuthActions.signUp),
         exhaustMap((action) =>
           this.authService.signup(action.user.email).pipe(
-            map(() => AuthActions.signupSuccess({ user: action.user })),
+            map((response) =>
+              AuthActions.signupSuccess({ user: response.user }),
+            ),
             catchError((error) => {
               return of(
                 AuthActions.signupError({
@@ -61,6 +63,19 @@ export class AuthEffects {
         ),
       ),
     { useEffectsErrorHandler: false },
+  );
+
+  updateUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.updateUser),
+      exhaustMap((action) =>
+        this.authService
+          .updateUser(action.user)
+          .pipe(
+            map(() => AuthActions.updateUserSuccess({ user: action.user })),
+          ),
+      ),
+    ),
   );
 
   constructor(

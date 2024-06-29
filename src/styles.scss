@@ -64,9 +64,15 @@ body {
 .sf-radio-group {
   display: flex;
   flex-direction: column;
+  width: 300px;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
 
   > label {
-    height: 45px;
+    height: 35px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -191,6 +197,12 @@ body {
   &.secondary {
     border-color: $color-secondary;
     background-color: $color-secondary;
+    color: white;
+  }
+
+  &.green {
+    border-color: $color-green;
+    background-color: $color-green;
     color: white;
   }
 }

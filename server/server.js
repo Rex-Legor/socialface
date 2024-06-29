@@ -21,6 +21,10 @@ server.post("/api/post/like", async (req, res, next) => {
   res.status(201).send();
 });
 
+server.put("/api/user/update", async (req, res, next) => {
+  res.status(200).send();
+});
+
 server.get("/api/ads", (req, res, next) => {
   res.status(200).send(userData.getAds.ads);
 });
@@ -53,7 +57,12 @@ server.post("/auth/signup", async (req, res, next) => {
   if (emailExist) {
     res.status(400).send({ message: "already exist" });
   } else {
-    res.status(201).send();
+    res.status(201).send({
+      user: {
+        ...userData.getUsers.users[0],
+        friends: userData.getUsers.users.slice(1),
+      },
+    });
   }
 });
 

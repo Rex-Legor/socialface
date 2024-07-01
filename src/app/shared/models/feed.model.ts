@@ -26,3 +26,8 @@ export interface IAd extends IPostCommon {
   companyName: string;
   companyPicture: string;
 }
+
+export interface IPostsResponseSuccess {
+  posts: IPost[];
+  totalPages: number;
+}

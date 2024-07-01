@@ -4,6 +4,7 @@ import {
   Component,
   OnDestroy,
   ViewEncapsulation,
+  signal,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -41,7 +42,7 @@ import { AutocompleteDirective } from '../../shared/directives/autocomplete.dire
 })
 export class SignupComponent {
   form: FormGroup;
-  errorMessage = '';
+  errorMessage = signal('');
   loading$: Observable<boolean>;
 
   constructor(
@@ -60,7 +61,7 @@ export class SignupComponent {
 
     this.loading$ = this.store.pipe(select(getLoginLoading));
     this.store.pipe(select(getLoginErrorType)).subscribe((error) => {
-      this.errorMessage = error;
+      this.errorMessage.set(error);
     });
     this.store.pipe(select(getIsLoggedIn)).subscribe((isLoggedIn) => {
       if (isLoggedIn) {

@@ -4,6 +4,7 @@ import {
   Component,
   OnDestroy,
   ViewEncapsulation,
+  signal,
 } from '@angular/core';
 import { UIModule } from '../../shared/ui/ui.module';
 import {
@@ -23,8 +24,6 @@ import {
 } from '../../state/selectors/auth.selector';
 import { Router, RouterModule } from '@angular/router';
 
-type LoginErrorType = 404 | 500;
-
 @Component({
   selector: 'sf-login.page',
   standalone: true,
@@ -35,9 +34,8 @@ type LoginErrorType = 404 | 500;
 })
 export class LoginComponent implements OnDestroy {
   form: FormGroup;
-  errorMessage = '';
+  errorMessage = signal('');
 
-  loginErrorType: LoginErrorType | null = null;
   loading$: Observable<boolean>;
   loggedInSubscribe: Subscription;
 
@@ -53,7 +51,7 @@ export class LoginComponent implements OnDestroy {
 
     this.loading$ = this.store.pipe(select(getLoginLoading));
     this.store.pipe(select(getLoginErrorType)).subscribe((error) => {
-      this.errorMessage = error;
+      this.errorMessage.set(error);
     });
     this.loggedInSubscribe = this.store
       .pipe(select(getIsLoggedIn))

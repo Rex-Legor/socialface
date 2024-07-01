@@ -7,6 +7,7 @@ export interface FeedState {
   ads: IAd[];
   loading: boolean;
   errorFetching: boolean;
+  totalPostPages: number;
 }
 
 export const initialState: FeedState = {
@@ -14,6 +15,7 @@ export const initialState: FeedState = {
   ads: [],
   loading: true,
   errorFetching: false,
+  totalPostPages: 1,
 };
 
 const mapPosts = (postToUpdate: IPost, state: FeedState) => {
@@ -68,11 +70,13 @@ export const feedReducer = createReducer(
     return {
       ...state,
       loading: false,
-      posts: action.posts,
+      posts: action.resetPosts
+        ? action.posts
+        : state.posts.concat(action.posts),
+      totalPostPages: action.totalPages,
     };
   }),
   on(FeedActions.getPostsError, (state, action) => {
-    console.log('error fetching');
     return {
       ...state,
       loading: false,

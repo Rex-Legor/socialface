@@ -4,6 +4,7 @@
   background-color: $color-gray-02;
   min-height: 100%;
   padding-top: $header-height;
+  padding-bottom: 20px;
   margin-top: 20px;
 
   .sf-form-title {
@@ -25,5 +26,21 @@
   &__buttons {
     display: flex;
     gap: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sf-settings {
+    &__content {
+      width: 80%;
+    }
+  }
+}
+
+.sf-header {
+  &__section {
+    &__chat-button {
+      display: none !important;
+    }
   }
 }

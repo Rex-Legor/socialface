@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -28,11 +28,9 @@ import { resetPassword } from '../../state/actions/auth.actions';
 })
 export class ForgotPasswordComponent {
   form: FormGroup;
-  errorMessage = '';
+  errorMessage = signal('');
   loading$: Observable<boolean>;
   resetSuccess$: Observable<boolean>;
-
-  // loading$: Observable<boolean>;
 
   constructor(
     private fb: FormBuilder,
@@ -44,7 +42,7 @@ export class ForgotPasswordComponent {
 
     this.loading$ = this.store.pipe(select(getLoginLoading));
     this.store.pipe(select(getLoginErrorType)).subscribe((error) => {
-      this.errorMessage = error;
+      this.errorMessage.set(error);
     });
     this.resetSuccess$ = this.store.pipe(
       select(getResetPasswordSuccess),

@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IAd, IPost } from '../models/feed.model';
+import { IAd, IPost, IPostsResponseSuccess } from '../models/feed.model';
 
 @Injectable({ providedIn: 'root' })
 export class FeedService {
   constructor(private httpClient: HttpClient) {}
 
-  getPosts() {
-    return this.httpClient.get<IPost[]>('/api/posts');
+  getPosts(pageNumber: number) {
+    return this.httpClient.get<IPostsResponseSuccess>('/api/posts', {
+      params: { pageNumber },
+    });
   }
 
   getAds() {

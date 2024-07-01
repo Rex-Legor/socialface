@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ViewEncapsulation,
+  signal,
+} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -31,15 +36,15 @@ import { updateUser } from '../../state/actions/auth.actions';
   providers: [provideNgxMask()],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class SettingsComponent {
   form: FormGroup;
-  errorMessage = '';
-  loading$: Observable<boolean> = of(false);
-  user: IUser | null = null;
-  userSubscription: Subscription;
+  errorMessage = signal('');
+  displaySuccessMessage = signal(false);
+  user = signal<IUser | null>(null);
 
-  displaySuccessMessage = false;
+  userSubscription: Subscription;
 
   constructor(
     private fb: FormBuilder,
@@ -56,7 +61,7 @@ export class SettingsComponent {
     this.userSubscription = this.authStore
       .pipe(select(getUser))
       .subscribe((user) => {
-        this.user = user;
+        this.user.set(user);
         this.form.setValue({
           firstName: user?.firstName,
           lastName: user?.lastName,
@@ -71,9 +76,9 @@ export class SettingsComponent {
     exportCsv({
       'First Name': this.form.get('firstName')?.value,
       'Last Name': this.form.get('lastName')?.value,
-      Email: this.user?.email,
-      Country: this.user?.country,
-      Birthdate: this.user?.birthDate,
+      Email: this.user()?.email,
+      Country: this.user()?.country,
+      Birthdate: this.user()?.birthDate,
       'Phone Number': this.form.get('phoneNumber')?.value,
       'Notification Preference': this.form.get('notificationPreference')?.value,
       'Profile Visibility': this.form.get('profileVisibility')?.value,
@@ -82,17 +87,17 @@ export class SettingsComponent {
 
   saveSettings() {
     if (this.form.invalid) return;
-    const newUser = { ...this.user, ...this.form.value };
+    const newUser = { ...this.user(), ...this.form.value };
     this.authStore.dispatch(
       updateUser({
         user: newUser,
       }),
     );
 
-    this.displaySuccessMessage = true;
+    this.displaySuccessMessage.set(true);
 
     setTimeout(() => {
-      this.displaySuccessMessage = false;
+      this.displaySuccessMessage.set(false);
     }, 2000);
   }
 }

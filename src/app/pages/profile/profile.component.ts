@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ViewEncapsulation,
+  signal,
 } from '@angular/core';
 import { UIModule } from '../../shared/ui/ui.module';
 import { Store, select } from '@ngrx/store';
@@ -35,15 +36,14 @@ import { IconsModule } from '../../shared/icons/icons.module';
   encapsulation: ViewEncapsulation.None,
 })
 export class ProfileComponent {
-  posts: IPost[] = [];
-  user: IUser | null = null;
+  posts = signal<IPost[]>([]);
+  user = signal<IUser | null>(null);
+  displayMenu = signal(false);
 
   loading$: Observable<boolean>;
   errorFetching$: Observable<boolean>;
   postsSub: Subscription;
   userSubscription: Subscription;
-
-  displayMenu = false;
 
   constructor(
     private store: Store<FeedState>,
@@ -55,17 +55,13 @@ export class ProfileComponent {
     this.errorFetching$ = this.store.pipe(select(getFeedErrorFetching));
 
     this.postsSub = this.store.pipe(select(getFeedPosts)).subscribe((posts) => {
-      this.posts = posts.filter(
-        ({ userData }) =>
-          userData.firstName == this.user?.firstName &&
-          userData.lastName == this.user.lastName,
-      );
+      this.posts.set(posts);
     });
 
     this.userSubscription = this.authStore
       .pipe(select(getUser))
       .subscribe((user) => {
-        this.user = user;
+        this.user.set(user);
       });
   }
 
@@ -75,11 +71,11 @@ export class ProfileComponent {
   }
 
   getData() {
-    this.store.dispatch(getPosts());
+    this.store.dispatch(getPosts({ pageNumber: 1 }));
   }
 
   toggleDisplayMenu() {
-    this.displayMenu = !this.displayMenu;
+    this.displayMenu.set(!this.displayMenu);
   }
 
   likePost(post: IPost) {
@@ -93,7 +89,7 @@ export class ProfileComponent {
     const newComment: IPostComment = {
       comment,
       postId: post.id,
-      userData: this.user as IUser,
+      userData: this.user() as IUser,
     };
     newPost.comments = post.comments
       ? post.comments.concat([newComment])

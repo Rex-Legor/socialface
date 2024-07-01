@@ -18,7 +18,12 @@ import { getUser } from '../../../state/selectors/auth.selector';
   selector: 'sf-header',
   template: `<div class="sf-header">
     <div class="sf-header__section">
-      <img src="assets/images/social-face-logo-no-text.png" alt="logo-image" />
+      <a routerLink="/feed">
+        <img
+          src="assets/images/social-face-logo-no-text.png"
+          alt="logo-image"
+        />
+      </a>
       <button (click)="menuButtonClick.emit()">
         <i-feather name="menu"></i-feather>
       </button>

@@ -2,15 +2,15 @@
 <div class="sf-profile">
   <div
     class="sf-profile__section"
-    [ngClass]="{ 'sf-profile__section__responsive-display': displayMenu }"
+    [ngClass]="{ 'sf-profile__section__responsive-display': displayMenu() }"
   >
-    <sf-sidebar [user]="user" />
+    <sf-sidebar [user]="user()" />
   </div>
   <div class="sf-profile__container">
     <div class="sf-profile__container__pictures">
-      <img [src]="user?.profilePicture" alt="" />
+      <img [src]="user()?.profilePicture" alt="" />
       <div class="sf-profile__container__pictures__text">
-        <h3>{{ user?.firstName }} {{ user?.lastName }}</h3>
+        <h3>{{ user()?.firstName }} {{ user()?.lastName }}</h3>
         <p>{{ "@fakeuserhasktag" }}</p>
       </div>
     </div>
@@ -71,7 +71,7 @@
         />
         <sf-post-placeholder *ngIf="loading$ | async" />
         <sf-post
-          *ngFor="let post of posts; trackBy: trackByPostId"
+          *ngFor="let post of posts(); trackBy: trackByPostId"
           [post]="post"
           (commentChange)="commentPost(post, $event)"
           (likeChange)="likePost(post)"

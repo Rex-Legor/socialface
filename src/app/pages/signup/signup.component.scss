@@ -1,33 +1,7 @@
 @import "../../shared/styles/variables.scss";
 
-.sf-signup {
-  height: 100%;
-  display: flex;
-
+.sf-auth {
   &__container {
-    &:last-child {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60%;
-      background-color: $color-primary;
-
-      img {
-        width: 70%;
-      }
-    }
-
-    &:first-child {
-      width: 40%;
-
-      .sf-input input,
-      .sf-button {
-        width: 300px;
-      }
-    }
-  }
-
-  .sf-radio-group {
-    width: 300px;
+    padding-bottom: 20px;
   }
 }

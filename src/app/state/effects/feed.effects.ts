@@ -10,9 +10,15 @@ export class FeedEffects {
     () =>
       this.actions$.pipe(
         ofType(FeedActions.getPosts),
-        exhaustMap(() =>
-          this.feedService.getPosts().pipe(
-            map((posts) => FeedActions.getPostsSuccess({ posts })),
+        exhaustMap(({ pageNumber }) =>
+          this.feedService.getPosts(pageNumber).pipe(
+            map(({ posts, totalPages }) =>
+              FeedActions.getPostsSuccess({
+                posts,
+                totalPages,
+                resetPosts: pageNumber == 1,
+              }),
+            ),
             catchError(() => of(FeedActions.getPostsError())),
           ),
         ),

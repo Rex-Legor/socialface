@@ -2,8 +2,10 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  HostListener,
   OnDestroy,
   ViewEncapsulation,
+  signal,
 } from '@angular/core';
 import { UIModule } from '../../shared/ui/ui.module';
 import { FeedState } from '../../state/reducers/feed.reducer';
@@ -20,6 +22,7 @@ import {
   getFeedCombinedPosts,
   getFeedErrorFetching,
   getFeedLoading,
+  getFeedTotalPages,
 } from '../../state/selectors/feed.selector';
 import { getUser } from '../../state/selectors/auth.selector';
 import { IUser } from '../../shared/models/user.model';
@@ -35,16 +38,21 @@ import { IconsModule } from '../../shared/icons/icons.module';
   encapsulation: ViewEncapsulation.None,
 })
 export class FeedComponent implements OnDestroy {
-  feedPosts: IPost[] = [];
-  user: IUser | null = null;
+  feedPosts = signal<IPost[]>([]);
+  user = signal<IUser | null>(null);
 
-  loading$: Observable<boolean>;
   errorFetching$: Observable<boolean>;
   postsSub: Subscription;
   userSubscription: Subscription;
+  totalPagesSubscription: Subscription;
+  loadingSubscription: Subscription;
 
-  displayMenu = false;
-  displayFriends = false;
+  displayMenu = signal(false);
+  displayFriends = signal(false);
+  displayPostPlaceholder = signal(true);
+  loading = signal(false);
+  currentPage = signal(1);
+  totalPages = signal(1);
 
   constructor(
     private store: Store<FeedState>,
@@ -52,38 +60,67 @@ export class FeedComponent implements OnDestroy {
   ) {
     this.getData();
 
-    this.loading$ = this.store.pipe(select(getFeedLoading));
+    this.loadingSubscription = this.store
+      .pipe(select(getFeedLoading))
+      .subscribe((loading) => this.loading.set(loading));
     this.errorFetching$ = this.store.pipe(select(getFeedErrorFetching));
 
+    this.totalPagesSubscription = this.store
+      .pipe(select(getFeedTotalPages))
+      .subscribe((totalPages) => this.totalPages.set(totalPages));
     this.postsSub = this.store
       .pipe(select(getFeedCombinedPosts))
       .subscribe((posts) => {
-        this.feedPosts = posts;
+        this.feedPosts.set(posts);
       });
 
     this.userSubscription = this.authStore
       .pipe(select(getUser))
       .subscribe((user) => {
-        this.user = user;
+        this.user.set(user);
       });
-  }
-
-  getData() {
-    this.store.dispatch(getPosts());
-    this.store.dispatch(getAds());
   }
 
   ngOnDestroy() {
     this.postsSub.unsubscribe();
     this.userSubscription.unsubscribe();
+    this.totalPagesSubscription.unsubscribe();
+    this.loadingSubscription.unsubscribe();
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    let pos =
+      (document.documentElement.scrollTop || document.body.scrollTop) +
+      document.documentElement.offsetHeight;
+    let max = document.documentElement.scrollHeight;
+    console.log('pos: ', pos);
+    console.log('max: ', max);
+    if (pos + 180 >= max) {
+      this.getPosts();
+    }
+  }
+
+  getPosts() {
+    if (!this.loading() && this.currentPage() <= this.totalPages()) {
+      this.store.dispatch(getPosts({ pageNumber: this.currentPage() }));
+      this.currentPage.set(this.currentPage() + 1);
+    }
+  }
+
+  getData() {
+    this.getPosts();
+    this.store.dispatch(getAds());
   }
 
   toggleDisplayMenu() {
-    this.displayMenu = !this.displayMenu;
+    const displayMenu = this.displayMenu();
+    this.displayMenu.set(!displayMenu);
   }
 
   toggleDisplayFrieds() {
-    this.displayFriends = !this.displayFriends;
+    const displayFriends = this.displayFriends();
+    this.displayFriends.set(!displayFriends);
   }
 
   likePost(post: IPost) {
@@ -97,7 +134,7 @@ export class FeedComponent implements OnDestroy {
     const newComment: IPostComment = {
       comment,
       postId: post.id,
-      userData: this.user as IUser,
+      userData: this.user() as IUser,
     };
     newPost.comments = post.comments
       ? post.comments.concat([newComment])

@@ -7,7 +7,7 @@
       </div>
       <span
         class="sf-span sf-span__error"
-        *ngIf="errorMessage == 'already exist'"
+        *ngIf="errorMessage() == 'already exist'"
         >This email doesn't exist</span
       >
       <div class="sf-input">

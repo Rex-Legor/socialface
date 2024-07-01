@@ -5,26 +5,26 @@
 <div class="sf-feed">
   <div
     class="sf-feed__section"
-    [ngClass]="{ 'sf-feed__section__responsive-display': displayMenu }"
+    [ngClass]="{ 'sf-feed__section__responsive-display': displayMenu() }"
   >
-    <sf-sidebar [user]="user" />
+    <sf-sidebar [user]="user()" />
   </div>
   <div class="sf-feed__content">
     <div class="sf-feed__content__posts">
       <sf-post-refresh (onRefresh)="getData()" *ngIf="errorFetching$ | async" />
-      <sf-post-placeholder *ngIf="loading$ | async" />
       <sf-post
-        *ngFor="let post of feedPosts; trackBy: trackByPostId"
+        *ngFor="let post of feedPosts(); trackBy: trackByPostId"
         [post]="post"
         (commentChange)="commentPost(post, $event)"
         (likeChange)="likePost(post)"
       />
+      <sf-post-placeholder *ngIf="currentPage() < totalPages() || loading()" />
     </div>
   </div>
   <div
     class="sf-feed__section"
-    [ngClass]="{ 'sf-feed__section__responsive-display': displayFriends }"
+    [ngClass]="{ 'sf-feed__section__responsive-display': displayFriends() }"
   >
-    <sf-sidebar [user]="user" [displayRightComponent]="true" />
+    <sf-sidebar [user]="user()" [displayRightComponent]="true" />
   </div>
 </div>

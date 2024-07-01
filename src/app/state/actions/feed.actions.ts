@@ -14,10 +14,13 @@ enum FeedActionTypes {
   PostLikeSuccess = '[Feed Page] Post Like Success',
 }
 
-export const getPosts = createAction(FeedActionTypes.GetPosts);
+export const getPosts = createAction(
+  FeedActionTypes.GetPosts,
+  props<{ pageNumber: number }>(),
+);
 export const getPostsSuccess = createAction(
   FeedActionTypes.GetPostsSuccess,
-  props<{ posts: IPost[] }>(),
+  props<{ posts: IPost[]; totalPages: number; resetPosts?: boolean }>(),
 );
 export const getPostsError = createAction(FeedActionTypes.GetPostsError);
 export const getAds = createAction(FeedActionTypes.GetAds);

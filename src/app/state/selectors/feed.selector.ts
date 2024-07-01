@@ -21,6 +21,11 @@ export const getFeedPosts = createSelector(
   (state: FeedState) => state.posts,
 );
 
+export const getFeedTotalPages = createSelector(
+  getFeedState,
+  (state: FeedState) => state.totalPostPages,
+);
+
 export const getFeedAds = createSelector(
   getFeedState,
   (state: FeedState) => state.ads,

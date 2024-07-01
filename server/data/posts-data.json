@@ -42,6 +42,7 @@
     {
       "id": 4,
       "userData": {
+        "id": 0,
         "firstName": "Ricardo",
         "lastName": "Legorreta",
         "profilePicture": "https://i.pravatar.cc/150?img=12"
@@ -120,6 +121,7 @@
     {
       "id": 10,
       "userData": {
+        "id": 0,
         "firstName": "Ricardo",
         "lastName": "Legorreta",
         "profilePicture": "https://i.pravatar.cc/150?img=12"
@@ -159,6 +161,7 @@
     {
       "id": 13,
       "userData": {
+        "id": 0,
         "firstName": "Ricardo",
         "lastName": "Legorreta",
         "profilePicture": "https://i.pravatar.cc/150?img=12"
@@ -237,6 +240,7 @@
     {
       "id": 19,
       "userData": {
+        "id": 0,
         "firstName": "Ricardo",
         "lastName": "Legorreta",
         "profilePicture": "https://i.pravatar.cc/150?img=12"

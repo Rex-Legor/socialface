@@ -11,6 +11,21 @@ body {
   font-family: $font-family;
 }
 
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+b,
+label {
+  &:focus-visible,
+  &:focus {
+    border: 2px solid $color-primary-dark;
+    border-radius: 5px;
+  }
+}
+
 .sf-input {
   @include input;
   display: flex;
@@ -230,6 +245,8 @@ form {
   align-items: center;
   gap: 10px;
   height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 
   .sf-form-title {
     text-align: left;
@@ -318,6 +335,7 @@ form {
 
     &__side {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 60%;
@@ -325,11 +343,10 @@ form {
       position: relative;
 
       &__slogan {
-        position: absolute;
-        bottom: 20%;
         text-align: center;
         color: white;
         max-width: 90%;
+        margin-top: -50px;
       }
 
       img {
@@ -339,7 +356,8 @@ form {
   }
 }
 
-@media only screen and (min-device-width: 0px) and (max-device-width: 700px) and (orientation: portrait) {
+@media only screen and (min-device-width: 0px) and (max-device-width: 700px) and (orientation: portrait),
+  screen and (max-width: 700px) {
   .sf-auth {
     &__container {
       width: 100%;
@@ -351,7 +369,7 @@ form {
   }
 }
 
-@media only screen and (min-height: 300px) and (max-height: 700px) and (orientation: landscape) {
+@media only screen and (min-device-height: 300px) and (max-device-height: 700px) and (orientation: landscape) {
   .sf-auth {
     &__container {
       width: 50%;

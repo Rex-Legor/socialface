@@ -16,7 +16,7 @@ enum FeedActionTypes {
 
 export const getPosts = createAction(
   FeedActionTypes.GetPosts,
-  props<{ pageNumber: number }>(),
+  props<{ pageNumber: number; userId?: string }>(),
 );
 export const getPostsSuccess = createAction(
   FeedActionTypes.GetPostsSuccess,

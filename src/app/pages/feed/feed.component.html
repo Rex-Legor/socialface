@@ -2,14 +2,16 @@
   (menuButtonClick)="toggleDisplayMenu()"
   (friendsButtonClick)="toggleDisplayFrieds()"
 />
+
 <div class="sf-feed">
-  <div
+  <section
+    tabindex="1"
     class="sf-feed__section"
     [ngClass]="{ 'sf-feed__section__responsive-display': displayMenu() }"
   >
     <sf-sidebar [user]="user()" />
-  </div>
-  <div class="sf-feed__content">
+  </section>
+  <section class="sf-feed__content" tabindex="3" aria-label="Feed Posts">
     <div class="sf-feed__content__posts">
       <sf-post-refresh (onRefresh)="getData()" *ngIf="errorFetching$ | async" />
       <sf-post
@@ -20,11 +22,12 @@
       />
       <sf-post-placeholder *ngIf="currentPage() < totalPages() || loading()" />
     </div>
-  </div>
-  <div
+  </section>
+  <section
+    tabindex="2"
     class="sf-feed__section"
     [ngClass]="{ 'sf-feed__section__responsive-display': displayFriends() }"
   >
     <sf-sidebar [user]="user()" [displayRightComponent]="true" />
-  </div>
+  </section>
 </div>

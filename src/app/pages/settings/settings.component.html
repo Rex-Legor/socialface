@@ -3,9 +3,12 @@
   <div class="sf-settings__content">
     <form [formGroup]="form">
       <div class="sf-form-title">
-        <h1>Settings</h1>
+        <h1 tabindex="0">Settings</h1>
       </div>
-      <span class="sf-span sf-span__success" *ngIf="displaySuccessMessage"
+      <span
+        tabindex="0"
+        class="sf-span sf-span__success"
+        *ngIf="displaySuccessMessage()"
         >Changes saved successfully</span
       >
       <div class="sf-input">
@@ -15,6 +18,7 @@
           formControlName="firstName"
         />
         <span
+          tabindex="0"
           *ngIf="
             form.get('firstName')?.touched && form.get('firstName')?.invalid
           "
@@ -29,6 +33,7 @@
           formControlName="lastName"
         />
         <span
+          tabindex="0"
           *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid"
           class="sf-input__error"
           >Please enter your last name</span
@@ -42,6 +47,7 @@
           mask="(000) 000-0000"
         />
         <span
+          tabindex="0"
           *ngIf="
             form.get('phoneNumber')?.touched && form.get('phoneNumber')?.invalid
           "
@@ -50,14 +56,14 @@
         >
       </div>
       <div class="sf-radio-group">
-        <h3>Notification preference</h3>
+        <h3 tabindex="0">Notification preference</h3>
         <label>
           <input
             type="radio"
             value="browser"
             formControlName="notificationPreference"
           />
-          <span>Receive In browser notifications</span>
+          <span tabindex="0">Receive In browser notifications</span>
         </label>
         <label>
           <input
@@ -65,18 +71,18 @@
             value="email"
             formControlName="notificationPreference"
           />
-          <span>Receive only email notifications</span>
+          <span tabindex="0">Receive only email notifications</span>
         </label>
       </div>
       <div class="sf-radio-group">
-        <h3>Profile visibility</h3>
+        <h3 tabindex="0">Profile visibility</h3>
         <label>
           <input
             type="radio"
             value="public"
             formControlName="profileVisibility"
           />
-          <span>Public</span>
+          <span tabindex="0">Public</span>
         </label>
         <label>
           <input
@@ -84,7 +90,7 @@
             value="private"
             formControlName="profileVisibility"
           />
-          <span>Private</span>
+          <span tabindex="0">Private</span>
         </label>
       </div>
       <div class="sf-settings__buttons">

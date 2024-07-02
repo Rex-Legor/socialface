@@ -11,7 +11,11 @@ import {
     <div class="sf-post sf-post-placeholder">
       <div class="sf-post-placeholder__content">
         <sf-card>
-          <img src="/assets/images/50x50.svg" sf-card-avatar />
+          <img
+            src="/assets/images/50x50.svg"
+            alt="Card Picture Gray Placeholder"
+            sf-card-avatar
+          />
           <sf-card-title>placeholder title</sf-card-title>
           <sf-card-description>placeholder sub title</sf-card-description>
         </sf-card>

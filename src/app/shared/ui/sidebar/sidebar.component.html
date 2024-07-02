@@ -1,6 +1,15 @@
-<div class="sf-sidebar" *ngIf="!displayRightComponent">
+<div
+  class="sf-sidebar"
+  *ngIf="!displayRightComponent"
+  tabindex="0"
+  aria-label="Left Sidebar for Menu and User Groups"
+>
   <ul class="sf-sidebar__menu">
-    <li routerLink="/feed" [ngClass]="{ active: router.url == '/feed' }">
+    <li
+      routerLink="/feed"
+      [ngClass]="{ active: router.url == '/feed' }"
+      aria-label="Home"
+    >
       <div>
         <i-feather name="home"></i-feather>
       </div>
@@ -31,20 +40,29 @@
       <span>Favourites</span>
     </li>
   </ul>
-  <h3>User groups</h3>
+  <h3 tabindex="0">User groups</h3>
   <ul *ngIf="user?.userGroups">
-    <li *ngFor="let group of user?.userGroups">
-      <img [src]="group.icon" alt="" />
+    <li
+      *ngFor="let group of user?.userGroups"
+      tabindex="0"
+      attr.aria-label="{{ group.name }}"
+    >
+      <img [src]="group.icon" alt="User Group Icon" />
       <span>{{ group.name }}</span>
     </li>
   </ul>
 </div>
 
-<div class="sf-sidebar sf-sidebar__right" *ngIf="displayRightComponent">
-  <h3>Active Friends</h3>
+<div
+  class="sf-sidebar sf-sidebar__right"
+  *ngIf="displayRightComponent"
+  tabindex="0"
+  aria-label="Right Sidebar for Active Friends"
+>
+  <h3 tabindex="0">Active Friends</h3>
   <ul *ngIf="user?.friends">
-    <li *ngFor="let friend of user?.friends">
-      <img [src]="friend.profilePicture" alt="" />
+    <li *ngFor="let friend of user?.friends" tabindex="0">
+      <img [src]="friend.profilePicture" alt="Friend Profile Picture" />
       <span>{{ friend.firstName }} {{ friend.lastName }}</span>
     </li>
   </ul>

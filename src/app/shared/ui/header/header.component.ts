@@ -16,12 +16,12 @@ import { getUser } from '../../../state/selectors/auth.selector';
 
 @Component({
   selector: 'sf-header',
-  template: `<div class="sf-header">
+  template: `<header class="sf-header" tabindex="0">
     <div class="sf-header__section">
       <a routerLink="/feed">
         <img
           src="assets/images/social-face-logo-no-text.png"
-          alt="logo-image"
+          alt="Social Face Logo"
         />
       </a>
       <button (click)="menuButtonClick.emit()">
@@ -43,7 +43,7 @@ import { getUser } from '../../../state/selectors/auth.selector';
       </button>
       <div class="sf-header__section__profile">
         <button (click)="toggleDisplayProfileOptions()">
-          <img [src]="user?.profilePicture" alt="" />
+          <img [src]="user?.profilePicture" alt="User Profile Picture" />
         </button>
         <div
           class="sf-header__section__profile__options"
@@ -52,7 +52,7 @@ import { getUser } from '../../../state/selectors/auth.selector';
           <ul>
             <li>
               <a routerLink="/profile">
-                <img [src]="user?.profilePicture" alt="" />
+                <img [src]="user?.profilePicture" alt="User Profile Picture" />
                 <span>{{ user?.firstName }} {{ user?.lastName }}</span>
               </a>
             </li>
@@ -72,7 +72,7 @@ import { getUser } from '../../../state/selectors/auth.selector';
         </div>
       </div>
     </div>
-  </div>`,
+  </header>`,
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,

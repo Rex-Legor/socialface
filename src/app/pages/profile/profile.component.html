@@ -1,46 +1,46 @@
 <sf-header (menuButtonClick)="toggleDisplayMenu()" />
 <div class="sf-profile">
-  <div
+  <section
     class="sf-profile__section"
     [ngClass]="{ 'sf-profile__section__responsive-display': displayMenu() }"
   >
     <sf-sidebar [user]="user()" />
-  </div>
-  <div class="sf-profile__container">
+  </section>
+  <section class="sf-profile__container" aria-label="User Profile Section">
     <div class="sf-profile__container__pictures">
-      <img [src]="user()?.profilePicture" alt="" />
+      <img [src]="user()?.profilePicture" alt="User Profile Picture" />
       <div class="sf-profile__container__pictures__text">
-        <h3>{{ user()?.firstName }} {{ user()?.lastName }}</h3>
-        <p>{{ "@fakeuserhasktag" }}</p>
+        <h3 tabindex="0">{{ user()?.firstName }} {{ user()?.lastName }}</h3>
+        <p tabindex="0">{{ "@fakeuserhasktag" }}</p>
       </div>
     </div>
     <div class="sf-profile__content">
       <div class="sf-profile__content__bio">
         <div class="sf-profile__content__bio__info">
-          <h4>About me</h4>
-          <p>
+          <h4 tabindex="0">About me</h4>
+          <p tabindex="0">
             "This is a placeholder text for design purposes. It represents the
             about me text from the user that usually gets edited here"
           </p>
           <div class="sf-profile__content__bio__info__details">
             <ul>
-              <li>
+              <li tabindex="0" aria-label="User Profile Address">
                 <i-feather name="map-pin"></i-feather>
                 <span>Fake Location, World</span>
               </li>
-              <li>
+              <li tabindex="0" aria-label="User Profile Web Page">
                 <i-feather name="globe"></i-feather>
                 <span>fakeaddress.com/user</span>
               </li>
-              <li>
+              <li tabindex="0" aria-label="User Profile Registration Date">
                 <i-feather name="calendar"></i-feather>
                 <span>Joined something between 1993 and 2024</span>
               </li>
-              <li>
+              <li tabindex="0" aria-label="User Profile Job">
                 <i-feather name="briefcase"></i-feather>
                 <span>Works at Unosquare</span>
               </li>
-              <li>
+              <li tabindex="0" aria-label="User Profile Status">
                 <i-feather name="heart"></i-feather>
                 <span>Warried to his wife</span>
               </li>
@@ -48,22 +48,49 @@
           </div>
         </div>
         <div class="sf-profile__content__bio__pictures">
-          <h4>My photos</h4>
+          <h4 tabindex="0">My photos</h4>
           <div>
-            <img src="https://picsum.photos/300?random=10" alt="" />
-            <img src="https://picsum.photos/300?random=11" alt="" />
-            <img src="https://picsum.photos/300?random=12" alt="" />
-            <img src="https://picsum.photos/300?random=13" alt="" />
-            <img src="https://picsum.photos/300?random=14" alt="" />
-            <img src="https://picsum.photos/300?random=15" alt="" />
-            <img src="https://picsum.photos/300?random=16" alt="" />
-            <img src="https://picsum.photos/300?random=17" alt="" />
-            <img src="https://picsum.photos/300?random=18" alt="" />
+            <img
+              src="https://picsum.photos/300?random=10"
+              alt="User random photo 1"
+            />
+            <img
+              src="https://picsum.photos/300?random=11"
+              alt="User random photo 2"
+            />
+            <img
+              src="https://picsum.photos/300?random=12"
+              alt="User random photo 3"
+            />
+            <img
+              src="https://picsum.photos/300?random=13"
+              alt="User random photo 4"
+            />
+            <img
+              src="https://picsum.photos/300?random=14"
+              alt="User random photo 5"
+            />
+            <img
+              src="https://picsum.photos/300?random=15"
+              alt="User random photo 6"
+            />
+            <img
+              src="https://picsum.photos/300?random=16"
+              alt="User random photo 7"
+            />
+            <img
+              src="https://picsum.photos/300?random=17"
+              alt="User random photo 8"
+            />
+            <img
+              src="https://picsum.photos/300?random=18"
+              alt="User random photo 9"
+            />
           </div>
         </div>
       </div>
       <div class="sf-profile__content__posts">
-        <h3>My posts</h3>
+        <h3 tabindex="0">My posts</h3>
 
         <sf-post-refresh
           (onRefresh)="getData()"
@@ -78,5 +105,5 @@
         />
       </div>
     </div>
-  </div>
+  </section>
 </div>

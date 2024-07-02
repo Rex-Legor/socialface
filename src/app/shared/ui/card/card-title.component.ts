@@ -8,7 +8,7 @@ import {
 
 @Component({
   selector: 'sf-card-title',
-  template: `<h3><ng-content></ng-content></h3>`,
+  template: `<h3 tabindex="0"><ng-content></ng-content></h3>`,
   styleUrl: './card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,

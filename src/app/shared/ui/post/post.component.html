@@ -1,6 +1,10 @@
 <div class="sf-post">
   <sf-card>
-    <img [src]="post?.userData?.profilePicture" sf-card-avatar alt="" />
+    <img
+      [src]="post?.userData?.profilePicture"
+      sf-card-avatar
+      alt="User Profile Picture"
+    />
     <sf-card-title
       >{{ post?.userData?.firstName }}
       {{ post?.userData?.lastName }}</sf-card-title
@@ -13,26 +17,29 @@
     }}</sf-card-description>
   </sf-card>
   <div class="sf-post__body">
-    <p>{{ post?.description }}</p>
-    <img [src]="post?.picture" *ngIf="post?.picture" />
+    <p tabindex="0">{{ post?.description }}</p>
+    <img [src]="post?.picture" *ngIf="post?.picture" alt="Post Picture" />
   </div>
   <div class="sf-post__footer">
     <div class="sf-post__footer__total">
-      <span>{{ post?.totalLikes }} People liked this</span>
+      <span tabindex="0">{{ post?.totalLikes }} People liked this</span>
       •
-      <span>{{ post?.totalComments }} Comments</span>
+      <span tabindex="0">{{ post?.totalComments }} Comments</span>
     </div>
     <div class="sf-post__footer__actions">
       <button
         [ngClass]="{ 'sf-post-liked': post?.liked }"
         (click)="onLikeChange()"
+        aria-label="Like Post Button"
       >
         <i-feather name="thumbs-up"></i-feather>Like
       </button>
-      <button (click)="commentInput.focus()">
+      <button (click)="commentInput.focus()" aria-label="Comment Post Button">
         <i-feather name="message-circle"></i-feather>Comment
       </button>
-      <button><i-feather name="share-2"></i-feather>Share</button>
+      <button aria-label="Share Post Button">
+        <i-feather name="share-2"></i-feather>Share
+      </button>
     </div>
     <div
       class="sf-post__footer__comment_list"
@@ -40,7 +47,10 @@
     >
       <ul>
         <li *ngFor="let comment of post?.comments">
-          <img [src]="comment.userData.profilePicture" alt="" />
+          <img
+            [src]="comment.userData.profilePicture"
+            alt="User Profile Picture"
+          />
           <div>
             <h4>
               {{ comment.userData.firstName }} {{ comment.userData.lastName }}
@@ -59,7 +69,7 @@
         placeholder="Write a comment..."
         [(ngModel)]="commentText"
       />
-      <button (click)="onCommentChange()">
+      <button (click)="onCommentChange()" aria-label="Send Comment">
         <i-feather name="send"></i-feather>
       </button>
     </div>

@@ -17,16 +17,9 @@ server.get("/api/posts", (req, res, next) => {
         ({ userData }) => userData && userData.id == userId,
       )
     : userData.getPosts.posts;
-  // page 1: 0 - 3 (1 - 1 = 0 x 4 = 0, 0 + 3 = 3)
-  // page 2: 4 - 7 (2 - 1 = 1 x 4 = 4, 4 + 3 = 7)
-  // page 3: 8 - 11
-  // page 4: 12 - 15
-  // page 5: 16 - 19
 
   const sliceStart = (pageNumber - 1) * 4;
   const sliceEnd = sliceStart + 4;
-
-  console.log(`Start: ${sliceStart} - End: ${sliceEnd}`);
 
   res.status(200).send({
     posts: posts.slice(sliceStart, sliceEnd),

@@ -71,7 +71,7 @@ export class ProfileComponent {
   }
 
   getData() {
-    this.store.dispatch(getPosts({ pageNumber: 1 }));
+    this.store.dispatch(getPosts({ pageNumber: 1, userId: this.user()?.id }));
   }
 
   toggleDisplayMenu() {

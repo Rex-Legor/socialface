@@ -6,9 +6,12 @@ import { IAd, IPost, IPostsResponseSuccess } from '../models/feed.model';
 export class FeedService {
   constructor(private httpClient: HttpClient) {}
 
-  getPosts(pageNumber: number) {
+  getPosts(pageNumber: number, userId?: string) {
+    const params: { pageNumber: number; userId?: string } = { pageNumber };
+    if (userId) params.userId = userId;
+
     return this.httpClient.get<IPostsResponseSuccess>('/api/posts', {
-      params: { pageNumber },
+      params,
     });
   }
 

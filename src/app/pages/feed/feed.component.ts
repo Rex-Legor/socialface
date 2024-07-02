@@ -63,7 +63,12 @@ export class FeedComponent implements OnDestroy {
     this.loadingSubscription = this.store
       .pipe(select(getFeedLoading))
       .subscribe((loading) => this.loading.set(loading));
-    this.errorFetching$ = this.store.pipe(select(getFeedErrorFetching));
+    this.errorFetching$ = this.store.pipe(
+      select(getFeedErrorFetching),
+      tap((error) => {
+        if (error && this.feedPosts().length == 0) this.currentPage.set(1);
+      }),
+    );
 
     this.totalPagesSubscription = this.store
       .pipe(select(getFeedTotalPages))
@@ -90,12 +95,10 @@ export class FeedComponent implements OnDestroy {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    let pos =
+    const pos =
       (document.documentElement.scrollTop || document.body.scrollTop) +
       document.documentElement.offsetHeight;
-    let max = document.documentElement.scrollHeight;
-    console.log('pos: ', pos);
-    console.log('max: ', max);
+    const max = document.documentElement.scrollHeight;
     if (pos + 180 >= max) {
       this.getPosts();
     }

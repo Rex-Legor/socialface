@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="feedPosts" datatype="html">
+        <source>Feed Posts</source>
+        <target>Publicaciones de Inicio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/feed/feed.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fotgotPasswordHeader" datatype="html">
+        <source>Forgot password?</source>
+        <target>¿Olvidaste tu Contraseña?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgotPasswordSubtitle" datatype="html">
+        <source> No worries, we&apos;ll send you reset instructions. </source>
+        <target> No te preocupes, te enviaremos instrucciones para restaurarla. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">7,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgotPasswordEmailError" datatype="html">
+        <source>This email doesn&apos;t exist</source>
+        <target>Este email no existe</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">15,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgotPasswordEmailSent" datatype="html">
+        <source>We sent the reset instructions to your email</source>
+        <target>Te enviamos las instrucciones para restaurar tu contraseña a tu email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgotPasswordEmailInput" datatype="html">
+        <source>Email*</source>
+        <target>Correo*</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgotPasswordEmailInputError" datatype="html">
+        <source>Please enter a valid email</source>
+        <target>Por favor, ingresa un correo válido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">36,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgotPasswordResetPassword" datatype="html">
+        <source> Reset password </source>
+        <target>Restaurar contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">44,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgotPasswordBack" datatype="html">
+        <source>Back to Log in</source>
+        <target>Regresar a Iniciar Sesión</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">47,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="authImage" datatype="html">
+        <source>Social Network Illustration</source>
+        <target>Ilustración de Red Social</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">151,152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="authSloganTitle" datatype="html">
+        <source>Connect with everyone</source>
+        <target>Conectate con todo el mundo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">155,156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="authSloganDescription" datatype="html">
+        <source> Be part of this worldwide social network and don&apos;t miss anything. </source>
+        <target>Sé parte de esta red social mundial y no te pierdas de nada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">60,63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">11,14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">157,160</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="loginTitle" datatype="html">
+        <source>Welcome back!</source>
+        <target>¡Bienvenido!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5309698892465444756" datatype="html">
+        <source>Incorrect email or password</source>
+        <target>Correo y/o contraseña incorrecto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+        <note priority="1" from="description">loginError</note>
+      </trans-unit>
+      <trans-unit id="emailInput" datatype="html">
+        <source>Email</source>
+        <target>Correo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8134695558272106554" datatype="html">
+        <source>Please enter a valid email</source>
+        <target>Por favor, ingresa un correo válido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+        <note priority="1" from="description">loginEmailError</note>
+      </trans-unit>
+      <trans-unit id="passwordInput" datatype="html">
+        <source>Password</source>
+        <target>Contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">45,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6366005533956235174" datatype="html">
+        <source>Please enter your password</source>
+        <target>Por favor, ingresa tu contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">54,57</context>
+        </context-group>
+        <note priority="1" from="description">loginPasswordError</note>
+      </trans-unit>
+      <trans-unit id="892063502898494584" datatype="html">
+        <source>I forgot my password</source>
+        <target>Olvidé mi contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">58,61</context>
+        </context-group>
+        <note priority="1" from="description">loginForgotPasswordLink</note>
+      </trans-unit>
+      <trans-unit id="2715185765061607307" datatype="html">
+        <source> Log in </source>
+        <target>Iniciar sesión</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">65,67</context>
+        </context-group>
+        <note priority="1" from="description">loginButton</note>
+      </trans-unit>
+      <trans-unit id="or" datatype="html">
+        <source>or</source>
+        <target>ó</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4935303974225478320" datatype="html">
+        <source> Log in with Google </source>
+        <target>Iniciar sesión con Google</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">69,71</context>
+        </context-group>
+        <note priority="1" from="description">loginWithGoogleButton</note>
+      </trans-unit>
+      <trans-unit id="998893521625914999" datatype="html">
+        <source> Don&apos;t you have an account? <x id="START_LINK" ctype="x-a"
+            equiv-text="&lt;a routerLink=&quot;/signup&quot;&gt;" />Sign up<x id="CLOSE_LINK"
+            ctype="x-a" equiv-text="&lt;/a&gt;" /></source>
+        <target> ¿No tienes una cuenta? <x id="START_LINK" ctype="x-a"
+            equiv-text="&lt;a routerLink=&quot;/signup&quot;&gt;" />Registrarse<x id="CLOSE_LINK"
+            ctype="x-a" equiv-text="&lt;/a&gt;" /></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
+          <context context-type="linenumber">72,74</context>
+        </context-group>
+        <note priority="1" from="description">loginSignupLink</note>
+      </trans-unit>
+      <trans-unit id="userProfileSection" datatype="html">
+        <source>User Profile Section</source>
+        <target>Sección de Perfil de Usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profilePicture" datatype="html">
+        <source>User Profile Picture</source>
+        <target>Foto de Perfil del Usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">77,78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileBioTitle" datatype="html">
+        <source>About me</source>
+        <target>Acerca de mí</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileBio" datatype="html">
+        <source> &quot;This is a placeholder text for design purposes. It represents the about me
+          text from the user that usually gets edited here&quot; </source>
+        <target>&quot;Este es un texto de muestra para propósito de diseño. Representa la sección de
+          Acerca de mí que usualmente el usuario edita aquí&quot;</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileAddressAriaLabel" datatype="html">
+        <source>User Profile Address</source>
+        <target>Dirección del Usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileAddress" datatype="html">
+        <source>Fake Location, World</source>
+        <target>Aquí va tu dirección</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileWebPageAriaLabel" datatype="html">
+        <source>User Profile Web Page</source>
+        <target>Página Web del Usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">45,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileRegistrationDateAriaLabel" datatype="html">
+        <source>User Profile Registration Date</source>
+        <target>Fecha de Registro del Usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileDate" datatype="html">
+        <source>Joined something between 1993 and 2024</source>
+        <target>Se unió entre 1993 y 2024</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">58,60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileJobAriaLabel" datatype="html">
+        <source>User Profile Job</source>
+        <target>Trabajo del Usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileJob" datatype="html">
+        <source>Works at Unosquare</source>
+        <target>Trabaja en Unosquare</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileStatusAriaLabel" datatype="html">
+        <source>User Profile Status</source>
+        <target>Estado del Usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profileStatus" datatype="html">
+        <source>Married to his wife</source>
+        <target>Casado con su esposa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">75,77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profilePhotos" datatype="html">
+        <source>My photos</source>
+        <target>Mis fotos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">81,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profilePosts" datatype="html">
+        <source>My posts</source>
+        <target>Mis publicaciones</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">123,125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settingsTitle" datatype="html">
+        <source>Settings</source>
+        <target>Ajustes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settingsSavedMessage" datatype="html">
+        <source>Changes saved successfully</source>
+        <target>Cambios guardados exitosamente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="firstNameRequired" datatype="html">
+        <source>First name*</source>
+        <target>Nombre*</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="firstNameError" datatype="html">
+        <source>Please enter your first name</source>
+        <target>Por favor, ingresa tu nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">29,31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">31,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lastNameRequired" datatype="html">
+        <source>Last name*</source>
+        <target>Apellido*</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lastNameError" datatype="html">
+        <source>Please enter your last name</source>
+        <target>Por favor, ingresa tu apellido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">46,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="phoneNumber" datatype="html">
+        <source>Phone number</source>
+        <target>Teléfono</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="phoneNumberError" datatype="html">
+        <source>Please enter a valid phone number</source>
+        <target>Por favor, ingresa un teléfono válido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">62,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="notificationPreference" datatype="html">
+        <source> Notification preference </source>
+        <target>Preferencia de notificaciones</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">67,69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">106,108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="browserNotifications" datatype="html">
+        <source>Receive In browser notifications</source>
+        <target>Recibir notificaciones del navegador</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">76,78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">115,117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="emailNotifications" datatype="html">
+        <source>Receive only email notifications</source>
+        <target>Recibir notificaciones por correo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">86,88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">125,127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settingsVisibility" datatype="html">
+        <source>Profile visibility</source>
+        <target>Visibilidad del perfil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">91,93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settingsPublic" datatype="html">
+        <source>Public</source>
+        <target>Público</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">98,100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settingsPrivate" datatype="html">
+        <source>Private</source>
+        <target>Privado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">106,108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settingsExportInfoButton" datatype="html">
+        <source> Export user info </source>
+        <target>Exportar mi información</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">115,117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settingsSaveButton" datatype="html">
+        <source> Save </source>
+        <target>Guardar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/settings/settings.component.html</context>
+          <context context-type="linenumber">122,124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupTitle" datatype="html">
+        <source>Sign up</source>
+        <target>Registrarse</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupSubTitle" datatype="html">
+        <source> Become part of the worldwide community! </source>
+        <target>¡Sé parte de la comunidad mundial!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupError" datatype="html">
+        <source>This email doesn&apos;t exist</source>
+        <target>Este correo no existe</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupEmailInput" datatype="html">
+        <source>Email*</source>
+        <target>Correo*</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupEmailInputError" datatype="html">
+        <source>Please enter a valid email</source>
+        <target>Por favor, ingresa un correo válido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">61,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="birthdate" datatype="html">
+        <source>Birthdate</source>
+        <target>Fecha de cumpleaños</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupBirthdateInputError" datatype="html">
+        <source>Please enter your birthdate</source>
+        <target>Por favor, ingresa tu fecha de cumpleaños</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">82,86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupCountryInput" datatype="html">
+        <source>Country*</source>
+        <target>Pais*</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">89,91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupCountryInputError" datatype="html">
+        <source>Please select your country</source>
+        <target>Por favor, ingresa tu pais</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">101,104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupButton" datatype="html">
+        <source> Sign up </source>
+        <target>Registrarse</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">134,136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupWithGoogleButton" datatype="html">
+        <source> Sign up with Google </source>
+        <target>Registrarse con Google</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">141,143</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="loginLink" datatype="html">
+        <source> Already have an account? <x id="START_LINK" ctype="x-a"
+            equiv-text="&lt;a routerLink=&quot;/login&quot;&gt;" />Log in<x id="CLOSE_LINK"
+            ctype="x-a" equiv-text="&lt;/a&gt;" /></source>
+        <target> ¿Ya tienes una cuenta? <x id="START_LINK" ctype="x-a"
+            equiv-text="&lt;a routerLink=&quot;/login&quot;&gt;" />Iniciar sesión<x id="CLOSE_LINK"
+            ctype="x-a" equiv-text="&lt;/a&gt;" /></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">144,146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="logoImage" datatype="html">
+        <source>Social Face Logo</source>
+        <target>Logo de Social Face</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="openMenuButton" datatype="html">
+        <source>Open Menu Button</source>
+        <target>Botón para Abrir Menú</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchHeaderInput" datatype="html">
+        <source>Search on Social Face</source>
+        <target>Buscar en Social Face</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="openFriendsButton" datatype="html">
+        <source>Open Friends List Button</source>
+        <target>Botón Para Abrir Lista de Amigos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="openUSerOptionsButton" datatype="html">
+        <source>Open User Options</source>
+        <target>Botón para Abrir Opciones de Usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settings" datatype="html">
+        <source>Settings</source>
+        <target>Ajustes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="logout" datatype="html">
+        <source>Logout</source>
+        <target>Cerrar Sesión</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/header/header.component.ts</context>
+          <context context-type="linenumber">93,94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="postPtofilePicture" datatype="html">
+        <source>User Post Profile Picture</source>
+        <target>Foto de Perfil de la Publicación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sponsored" datatype="html">
+        <source>Sponsored</source>
+        <target>Patrocinado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="postPicture" datatype="html">
+        <source>Post Picture</source>
+        <target>Foto de la Publicación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="peopleLiked" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ post?.totalLikes }}" /> People liked this</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ post?.totalLikes }}" /> Me gusta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="peopleCommented" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ post?.totalComments }}" /> Comments</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ post?.totalComments }}" /> Commentarios</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">37,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="likePostAriaLabel" datatype="html">
+        <source>Like Post Button</source>
+        <target>Botón Me Gusta la Publicación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="like" datatype="html">
+        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;thumbs-up&quot;&gt;" /><x id="CLOSE_TAG_I_FEATHER"
+            ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Like </source>
+        <target><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;thumbs-up&quot;&gt;" /><x id="CLOSE_TAG_I_FEATHER"
+            ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Me Gusta </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="commentPostAriaLabel" datatype="html">
+        <source>Comment Post Button</source>
+        <target>Botón para Comentar Publicación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="comment" datatype="html">
+        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;message-circle&quot;&gt;" /><x
+            id="CLOSE_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Comment </source>
+        <target><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;message-circle&quot;&gt;" /><x
+            id="CLOSE_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Comentar </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">56,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sharePostAriaLabel" datatype="html">
+        <source>Share Post Button</source>
+        <target>Botón para Compartir Publicación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">59,60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="share" datatype="html">
+        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;share-2&quot;&gt;" /><x id="CLOSE_TAG_I_FEATHER"
+            ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Share </source>
+        <target><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;share-2&quot;&gt;" /><x id="CLOSE_TAG_I_FEATHER"
+            ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Compartir </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">63,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="commentProfilePicture" datatype="html">
+        <source> Comment Profile Picture</source>
+        <target>Foto de Perfil del Comentario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">74,75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="writeComment" datatype="html">
+        <source>Write a comment...</source>
+        <target>Escribe un comentario...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">92,93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sentComment" datatype="html">
+        <source>Send Comment</source>
+        <target>Enviar comentario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
+          <context context-type="linenumber">98,99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fetchPostErrorTitle" datatype="html">
+        <source> Uups, something happened. </source>
+        <target>Oh oh, algo pasó.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.refresh.component.ts</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fetchPostErrorDescription" datatype="html">
+        <source> This may be because of an error that we&apos;re working on to get fixed. Try to
+          reload this page. </source>
+        <target>Esto puede ser causa de un error en el que estamos trabajando. Trata refrescando
+          esta página.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.refresh.component.ts</context>
+          <context context-type="linenumber">23,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reload" datatype="html">
+        <source>Reload</source>
+        <target>Refrescar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.refresh.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/post/post.refresh.component.ts</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home" datatype="html">
+        <source>Home</source>
+        <target>Inicio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="friends" datatype="html">
+        <source>Frieds</source>
+        <target>Mis Amigos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="marketplace" datatype="html">
+        <source>Marketplace</source>
+        <target>Mercado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="saved" datatype="html">
+        <source>Saved</source>
+        <target>Guardados</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="favourites" datatype="html">
+        <source>Favourites</source>
+        <target>Favoritos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">40,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userGroups" datatype="html">
+        <source>User groups</source>
+        <target>Mis grupos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="groupIcon" datatype="html">
+        <source>User Group Icon</source>
+        <target>Ícono del Grupo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rightSidebar" datatype="html">
+        <source>Right Sidebar for Active Friends</source>
+        <target>Barra lateral para Mis Amigos Activos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">60,61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="activeFriends" datatype="html">
+        <source>Active Friends</source>
+        <target>Amigos Activos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="friendProfilePicture" datatype="html">
+        <source>Friend Profile Picture</source>
+        <target>Foto de Perfil de Amigo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

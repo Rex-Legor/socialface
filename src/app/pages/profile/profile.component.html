@@ -6,9 +6,17 @@
   >
     <sf-sidebar [user]="user()" />
   </section>
-  <section class="sf-profile__container" aria-label="User Profile Section">
+  <section
+    class="sf-profile__container"
+    aria-label="User Profile Section"
+    i18n-aria-label="@@userProfileSection"
+  >
     <div class="sf-profile__container__pictures">
-      <img [src]="user()?.profilePicture" alt="User Profile Picture" />
+      <img
+        [src]="user()?.profilePicture"
+        alt="User Profile Picture"
+        i18n-alt="@@profilePicture"
+      />
       <div class="sf-profile__container__pictures__text">
         <h3 tabindex="0">{{ user()?.firstName }} {{ user()?.lastName }}</h3>
         <p tabindex="0">{{ "@fakeuserhasktag" }}</p>
@@ -17,38 +25,60 @@
     <div class="sf-profile__content">
       <div class="sf-profile__content__bio">
         <div class="sf-profile__content__bio__info">
-          <h4 tabindex="0">About me</h4>
-          <p tabindex="0">
+          <h4 tabindex="0" i18n="@@profileBioTitle">About me</h4>
+          <p tabindex="0" i18n="@@profileBio">
             "This is a placeholder text for design purposes. It represents the
             about me text from the user that usually gets edited here"
           </p>
           <div class="sf-profile__content__bio__info__details">
             <ul>
-              <li tabindex="0" aria-label="User Profile Address">
+              <li
+                tabindex="0"
+                aria-label="User Profile Address"
+                i18n-aria-label="@@profileAddressAriaLabel"
+              >
                 <i-feather name="map-pin"></i-feather>
-                <span>Fake Location, World</span>
+                <span i18n="@@profileAddress">Fake Location, World</span>
               </li>
-              <li tabindex="0" aria-label="User Profile Web Page">
+              <li
+                tabindex="0"
+                aria-label="User Profile Web Page"
+                i18n-aria-label="@@profileWebPageAriaLabel"
+              >
                 <i-feather name="globe"></i-feather>
                 <span>fakeaddress.com/user</span>
               </li>
-              <li tabindex="0" aria-label="User Profile Registration Date">
+              <li
+                tabindex="0"
+                aria-label="User Profile Registration Date"
+                i18n-aria-label="@@profileRegistrationDateAriaLabel"
+              >
                 <i-feather name="calendar"></i-feather>
-                <span>Joined something between 1993 and 2024</span>
+                <span i18n="@@profileDate"
+                  >Joined something between 1993 and 2024</span
+                >
               </li>
-              <li tabindex="0" aria-label="User Profile Job">
+              <li
+                tabindex="0"
+                aria-label="User Profile Job"
+                i18n-aria-label="@@profileJobAriaLabel"
+              >
                 <i-feather name="briefcase"></i-feather>
-                <span>Works at Unosquare</span>
+                <span i18n="@@profileJob">Works at Unosquare</span>
               </li>
-              <li tabindex="0" aria-label="User Profile Status">
+              <li
+                tabindex="0"
+                aria-label="User Profile Status"
+                i18n-aria-label="@@profileStatusAriaLabel"
+              >
                 <i-feather name="heart"></i-feather>
-                <span>Warried to his wife</span>
+                <span i18n="@@profileStatus">Married to his wife</span>
               </li>
             </ul>
           </div>
         </div>
         <div class="sf-profile__content__bio__pictures">
-          <h4 tabindex="0">My photos</h4>
+          <h4 tabindex="0" i18n="@@profilePhotos">My photos</h4>
           <div>
             <img
               src="https://picsum.photos/300?random=10"
@@ -90,7 +120,7 @@
         </div>
       </div>
       <div class="sf-profile__content__posts">
-        <h3 tabindex="0">My posts</h3>
+        <h3 tabindex="0" i18n="@@profilePosts">My posts</h3>
 
         <sf-post-refresh
           (onRefresh)="getData()"

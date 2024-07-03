@@ -11,9 +11,15 @@ import {
   selector: 'sf-post-refresh',
   template: `
     <div class="sf-post sf-post-refresh">
-      <img src="assets/images/error-post.png" alt="Error Image" />
-      <h3 tabindex="0">Uups, something happened.</h3>
-      <p tabindex="0">
+      <img
+        src="assets/images/error-post.png"
+        alt="Error Image"
+        i18n="@@errorFetchingPostsImage"
+      />
+      <h3 tabindex="0" i18n="@@fetchPostErrorTitle">
+        Uups, something happened.
+      </h3>
+      <p tabindex="0" i18n="@@fetchPostErrorDescription">
         This may be because of an error that we're working on to get fixed. Try
         to reload this page.
       </p>
@@ -21,6 +27,8 @@ import {
         class="sf-button primary"
         (click)="onRefresh.emit()"
         aria-label="Reload"
+        i18n="@@reload"
+        i18n-aria-label="@@reload"
       >
         <i-feather name="refresh-cw"></i-feather>Reload
       </button>

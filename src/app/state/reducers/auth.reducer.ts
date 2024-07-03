@@ -13,7 +13,7 @@ export interface AuthState {
 const userPersisted = localStorage.getItem('sf-user');
 
 export const initialState: AuthState = {
-  isLoggedIn: false,
+  isLoggedIn: !!userPersisted,
   user: userPersisted ? JSON.parse(userPersisted) : null,
   loading: false,
   errorMessage: '',
@@ -98,5 +98,10 @@ export const authReducer = createReducer(
       ...state,
       user: response.user,
     };
+  }),
+
+  on(AuthActions.logout, () => {
+    localStorage.removeItem('sf-user');
+    return { ...initialState, user: null, isLoggedIn: false };
   }),
 );

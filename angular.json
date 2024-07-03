@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "socialface": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es-MX": "src/locales/messages.es.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -25,7 +31,8 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "localize": true
           },
           "configurations": {
             "production": {
@@ -47,6 +54,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "es-MX": {
+              "localize": ["es-MX"]
             }
           },
           "defaultConfiguration": "production"
@@ -59,6 +69,9 @@
             },
             "development": {
               "buildTarget": "socialface:build:development"
+            },
+            "es-MX": {
+              "buildTarget": "socialface:build:development,es-MX"
             }
           },
           "defaultConfiguration": "development"

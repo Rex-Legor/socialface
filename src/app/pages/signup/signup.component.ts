@@ -45,6 +45,8 @@ export class SignupComponent {
   errorMessage = signal('');
   loading$: Observable<boolean>;
 
+  birthdatePLaceholder = $localize`:@@birthdate:Birthdate`;
+
   constructor(
     private fb: FormBuilder,
     private store: Store<AuthState>,

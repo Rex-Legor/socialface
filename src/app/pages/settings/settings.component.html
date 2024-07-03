@@ -3,9 +3,10 @@
   <div class="sf-settings__content">
     <form [formGroup]="form">
       <div class="sf-form-title">
-        <h1 tabindex="0">Settings</h1>
+        <h1 tabindex="0" i18n="@@settingsTitle">Settings</h1>
       </div>
       <span
+        i18n="@@settingsSavedMessage"
         tabindex="0"
         class="sf-span sf-span__success"
         *ngIf="displaySuccessMessage()"
@@ -16,8 +17,10 @@
           type="text"
           placeholder="First name*"
           formControlName="firstName"
+          i18n-placeholder="@@firstNameRequired"
         />
         <span
+          i18n="@@firstNameError"
           tabindex="0"
           *ngIf="
             form.get('firstName')?.touched && form.get('firstName')?.invalid
@@ -28,11 +31,13 @@
       </div>
       <div class="sf-input">
         <input
+          i18n-placeholder="@@lastNameRequired"
           type="text"
           placeholder="Last name*"
           formControlName="lastName"
         />
         <span
+          i18n="@@lastNameError"
           tabindex="0"
           *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid"
           class="sf-input__error"
@@ -41,12 +46,14 @@
       </div>
       <div class="sf-input">
         <input
+          i18n-placeholder="@@phoneNumber"
           type="text"
           placeholder="Phone number"
           formControlName="phoneNumber"
           mask="(000) 000-0000"
         />
         <span
+          i18n="@@phoneNumberError"
           tabindex="0"
           *ngIf="
             form.get('phoneNumber')?.touched && form.get('phoneNumber')?.invalid
@@ -56,14 +63,18 @@
         >
       </div>
       <div class="sf-radio-group">
-        <h3 tabindex="0">Notification preference</h3>
+        <h3 tabindex="0" i18n="@@notificationPreference">
+          Notification preference
+        </h3>
         <label>
           <input
             type="radio"
             value="browser"
             formControlName="notificationPreference"
           />
-          <span tabindex="0">Receive In browser notifications</span>
+          <span tabindex="0" i18n="@@browserNotifications"
+            >Receive In browser notifications</span
+          >
         </label>
         <label>
           <input
@@ -71,18 +82,20 @@
             value="email"
             formControlName="notificationPreference"
           />
-          <span tabindex="0">Receive only email notifications</span>
+          <span tabindex="0" i18n="@@emailNotifications"
+            >Receive only email notifications</span
+          >
         </label>
       </div>
       <div class="sf-radio-group">
-        <h3 tabindex="0">Profile visibility</h3>
+        <h3 tabindex="0" i18n="@@settingsVisibility">Profile visibility</h3>
         <label>
           <input
             type="radio"
             value="public"
             formControlName="profileVisibility"
           />
-          <span tabindex="0">Public</span>
+          <span tabindex="0" i18n="@@settingsPublic">Public</span>
         </label>
         <label>
           <input
@@ -90,14 +103,24 @@
             value="private"
             formControlName="profileVisibility"
           />
-          <span tabindex="0">Private</span>
+          <span tabindex="0" i18n="@@settingsPrivate">Private</span>
         </label>
       </div>
       <div class="sf-settings__buttons">
-        <button class="sf-button green" (click)="exportSettings()">
+        <button
+          class="sf-button green"
+          (click)="exportSettings()"
+          i18n="@@settingsExportInfoButton"
+        >
           Export user info
         </button>
-        <button class="sf-button primary" (click)="saveSettings()">Save</button>
+        <button
+          class="sf-button primary"
+          (click)="saveSettings()"
+          i18n="@@settingsSaveButton"
+        >
+          Save
+        </button>
       </div>
     </form>
   </div>

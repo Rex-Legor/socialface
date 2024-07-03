@@ -11,7 +11,12 @@
   >
     <sf-sidebar [user]="user()" />
   </section>
-  <section class="sf-feed__content" tabindex="3" aria-label="Feed Posts">
+  <section
+    class="sf-feed__content"
+    tabindex="3"
+    aria-label="Feed Posts"
+    i18n-aria-label="@@feedPosts"
+  >
     <div class="sf-feed__content__posts">
       <sf-post-refresh (onRefresh)="getData()" *ngIf="errorFetching$ | async" />
       <sf-post

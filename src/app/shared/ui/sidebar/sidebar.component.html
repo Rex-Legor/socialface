@@ -13,41 +13,41 @@
       <div>
         <i-feather name="home"></i-feather>
       </div>
-      <span>Home</span>
+      <span i18n="@@home">Home</span>
     </li>
     <li>
       <div>
         <i-feather name="users"></i-feather>
       </div>
-      <span>Frieds</span>
+      <span i18n="@@friends">Frieds</span>
     </li>
     <li>
       <div>
         <i-feather name="shopping-cart"></i-feather>
       </div>
-      <span>Marketplace</span>
+      <span i18n="@@marketplace">Marketplace</span>
     </li>
     <li>
       <div>
         <i-feather name="bookmark"></i-feather>
       </div>
-      <span>Saved</span>
+      <span i18n="@@saved">Saved</span>
     </li>
     <li>
       <div>
         <i-feather name="star"></i-feather>
       </div>
-      <span>Favourites</span>
+      <span i18n="@@favourites">Favourites</span>
     </li>
   </ul>
-  <h3 tabindex="0">User groups</h3>
+  <h3 tabindex="0" i18n="@@userGroups">User groups</h3>
   <ul *ngIf="user?.userGroups">
     <li
       *ngFor="let group of user?.userGroups"
       tabindex="0"
       attr.aria-label="{{ group.name }}"
     >
-      <img [src]="group.icon" alt="User Group Icon" />
+      <img [src]="group.icon" alt="User Group Icon" i18n-alt="@@groupIcon" />
       <span>{{ group.name }}</span>
     </li>
   </ul>
@@ -58,11 +58,16 @@
   *ngIf="displayRightComponent"
   tabindex="0"
   aria-label="Right Sidebar for Active Friends"
+  i18n-aria-label="@@rightSidebar"
 >
-  <h3 tabindex="0">Active Friends</h3>
+  <h3 tabindex="0" i18n="@@activeFriends">Active Friends</h3>
   <ul *ngIf="user?.friends">
     <li *ngFor="let friend of user?.friends" tabindex="0">
-      <img [src]="friend.profilePicture" alt="Friend Profile Picture" />
+      <img
+        [src]="friend.profilePicture"
+        alt="Friend Profile Picture"
+        i18n-alt="@@friendProfilePicture"
+      />
       <span>{{ friend.firstName }} {{ friend.lastName }}</span>
     </li>
   </ul>

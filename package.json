@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-es": "ng serve --configuration=es-MX",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run socialface:storybook",
     "build-storybook": "ng run socialface:build-storybook",
-    "i18n:extract": "ng xi18n",
+    "i18n:extract": "ng extract-i18n --output-path src/locales",
     "mock:server": "nodemon server/server.js --ext js,ts,json,html"
   },
   "private": true,
@@ -34,6 +35,7 @@
     "@angular-devkit/build-angular": "^17.3.8",
     "@angular/cli": "^17.3.8",
     "@angular/compiler-cli": "^17.3.0",
+    "@angular/localize": "^17.3.11",
     "@chromatic-com/storybook": "^1.5.0",
     "@storybook/addon-essentials": "^8.1.8",
     "@storybook/addon-interactions": "^8.1.8",

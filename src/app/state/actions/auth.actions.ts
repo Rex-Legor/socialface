@@ -14,12 +14,15 @@ enum AuthActionTypes {
   ResetPasswordError = '[ResetPassword Page] ResetPassword Error',
   UpdateUser = '[Settings Page] Update User',
   UpdateUserSuccess = '[Settings Page] Update User Success',
+  Logout = '[Logout Page] Logout',
 }
 
 export const login = createAction(
   AuthActionTypes.Login,
   props<{ email: string; password: string }>(),
 );
+
+export const logout = createAction(AuthActionTypes.Logout);
 
 export const loginSuccess = createAction(
   AuthActionTypes.LoginSuccess,

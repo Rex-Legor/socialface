@@ -2,10 +2,13 @@
   <div class="sf-auth__container">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="sf-form-title">
-        <h1 tabindex="0">Sign up</h1>
-        <p tabindex="0">Become part of the worldwide community!</p>
+        <h1 tabindex="0" i18n="@@signupTitle">Sign up</h1>
+        <p tabindex="0" i18n="@@signupSubTitle">
+          Become part of the worldwide community!
+        </p>
       </div>
       <span
+        i18n="@@signupError"
         tabindex="0"
         class="sf-span sf-span__error"
         *ngIf="errorMessage() == 'already exist'"
@@ -16,8 +19,10 @@
           type="text"
           placeholder="First name*"
           formControlName="firstName"
+          i18n-placeholder="@@firstNameRequired"
         />
         <span
+          i18n="@@firstNameError"
           tabindex="0"
           *ngIf="
             form.get('firstName')?.touched && form.get('firstName')?.invalid
@@ -28,11 +33,13 @@
       </div>
       <div class="sf-input">
         <input
+          i18n-placeholder="@@lastNameRequired"
           type="text"
           placeholder="Last name*"
           formControlName="lastName"
         />
         <span
+          i18n="@@lastNameError"
           tabindex="0"
           *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid"
           class="sf-input__error"
@@ -40,8 +47,14 @@
         >
       </div>
       <div class="sf-input">
-        <input type="email" placeholder="Email*" formControlName="email" />
+        <input
+          type="email"
+          placeholder="Email*"
+          formControlName="email"
+          i18n-placeholder="@@signupEmailInput"
+        />
         <span
+          i18n="@@signupEmailInputError"
           tabindex="0"
           *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
           class="sf-input__error"
@@ -50,15 +63,19 @@
       </div>
       <div class="sf-input sf-datepicker">
         <input
+          i18n-aria-label="@@birthdate"
           type="date"
           min="1900-01-01"
           max="2024-06-13"
-          [ngStyle]="{ '--placeholder': '&quot;' + 'Birthdate' + '&quot;' }"
-          ariaDescription="Birthdate"
+          [ngStyle]="{
+            '--placeholder': '&quot;' + birthdatePLaceholder + '&quot;',
+          }"
+          aria-label="Birthdate"
           formControlName="birthDate"
         />
 
         <span
+          i18n="@@signupBirthdateInputError"
           tabindex="0"
           *ngIf="
             form.get('birthDate')?.touched && form.get('birthDate')?.invalid
@@ -70,6 +87,7 @@
 
       <div class="sf-input sf-autocomplete">
         <input
+          i18n-placeholder="@@signupCountryInput"
           placeholder="Country*"
           sfAutocomplete
           [autocompleteOptions]="['Mexico', 'USA', 'Canada']"
@@ -78,6 +96,7 @@
           formControlName="country"
         />
         <span
+          i18n="@@signupCountryInputError"
           tabindex="0"
           *ngIf="form.get('country')?.touched && form.get('country')?.invalid"
           class="sf-input__error"
@@ -85,14 +104,18 @@
         >
       </div>
       <div class="sf-radio-group">
-        <h3 tabindex="0">Notification preference</h3>
+        <h3 tabindex="0" i18n="@@notificationPreference">
+          Notification preference
+        </h3>
         <label>
           <input
             type="radio"
             value="browser"
             formControlName="notificationPreference"
           />
-          <span tabindex="0">Receive In browser notifications</span>
+          <span i18n="@@browserNotifications" tabindex="0"
+            >Receive In browser notifications</span
+          >
         </label>
         <label>
           <input
@@ -100,24 +123,39 @@
             value="email"
             formControlName="notificationPreference"
           />
-          <span tabindex="0">Receive only email notifications</span>
+          <span i18n="@@emailNotifications" tabindex="0"
+            >Receive only email notifications</span
+          >
         </label>
       </div>
-      <button class="sf-button primary" [disabled]="loading$ | async">
+      <button
+        class="sf-button primary"
+        [disabled]="loading$ | async"
+        i18n="@@signupButton"
+      >
         Sign up
       </button>
-      <div class="sf-separator">or</div>
-      <button class="sf-button sf-button-google">Sign up with Google</button>
-      <p tabindex="0">
+      <div class="sf-separator" i18n="@@or">or</div>
+      <button
+        class="sf-button sf-button-google"
+        i18n="@@signupWithGoogleButton"
+      >
+        Sign up with Google
+      </button>
+      <p tabindex="0" i18n="@@loginLink">
         Already have an account? <a routerLink="/login">Log in</a>
       </p>
     </form>
   </div>
   <div class="sf-auth__container sf-auth__container__side">
-    <img src="assets/images/login-side.png" alt="Social Network Illustration" />
+    <img
+      src="assets/images/login-side.png"
+      alt="Social Network Illustration"
+      i18n-alt="@@authImage"
+    />
     <div class="sf-auth__container__side__slogan">
-      <h2 tabindex="0">Connect with everyone</h2>
-      <p tabindex="0">
+      <h2 tabindex="0" i18n="@@authSloganTitle">Connect with everyone</h2>
+      <p tabindex="0" i18n="@@authSloganDescription">
         Be part of this worldwide social network and don't miss anything.
       </p>
     </div>

@@ -22,50 +22,75 @@ import { getUser } from '../../../state/selectors/auth.selector';
         <img
           src="assets/images/social-face-logo-no-text.png"
           alt="Social Face Logo"
+          i18n-alt="@@logoImage"
         />
       </a>
-      <button (click)="menuButtonClick.emit()">
+      <button
+        (click)="menuButtonClick.emit()"
+        aria-label="Open Menu Button"
+        i18n-aria-label="@@openMenuButton"
+      >
         <i-feather name="menu"></i-feather>
       </button>
     </div>
     <div class="sf-header__section">
       <div class="sf-input sf-input__icon">
         <i-feather name="search"></i-feather>
-        <input type="text" placeholder="Search on Social Face" />
+        <input
+          type="text"
+          placeholder="Search on Social Face"
+          i18n-placeholder="@@searchHeaderInput"
+        />
       </div>
     </div>
     <div class="sf-header__section">
       <button
         (click)="friendsButtonClick.emit()"
         class="sf-header__section__chat-button"
+        aria-label="Open Friends List Button"
+        i18n-aria-label="@@openFriendsButton"
       >
         <i-feather name="message-circle"></i-feather>
       </button>
       <div class="sf-header__section__profile">
-        <button (click)="toggleDisplayProfileOptions()">
-          <img [src]="user?.profilePicture" alt="User Profile Picture" />
+        <button
+          (click)="toggleDisplayProfileOptions()"
+          aria-label="Open User Options"
+          i18n-aria-label="@@openUSerOptionsButton"
+        >
+          <img
+            tabindex="0"
+            [src]="user?.profilePicture"
+            alt="User Profile Picture"
+            i18n-alt="@@profilePicture"
+          />
         </button>
         <div
           class="sf-header__section__profile__options"
           *ngIf="displayProfileOptions"
         >
-          <ul>
+          <ul aria-haspopup="menu" tabindex="0">
             <li>
               <a routerLink="/profile">
-                <img [src]="user?.profilePicture" alt="User Profile Picture" />
+                <img
+                  [src]="user?.profilePicture"
+                  alt="User Profile Picture"
+                  tabindex="0"
+                  i18n-alt="@@profilePicture"
+                />
                 <span>{{ user?.firstName }} {{ user?.lastName }}</span>
               </a>
             </li>
             <li>
               <a routerLink="/settings">
                 <div><i-feather name="settings"></i-feather></div>
-                <span>Settings</span>
+                <span i18n="@@settings">Settings</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a routerLink="/logout">
                 <div><i-feather name="log-out"></i-feather></div>
-                <span>Logout</span>
+                <span i18n="@@logout">Logout</span>
               </a>
             </li>
           </ul>

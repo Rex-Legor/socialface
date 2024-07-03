@@ -153,6 +153,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   &__error {
     color: $color-error;

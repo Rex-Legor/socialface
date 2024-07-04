@@ -3,6 +3,7 @@ import { provideEffects } from '@ngrx/effects';
 import { AuthEffects } from './state/effects/auth.effects';
 import { authGuard } from './shared/guards/auth.guard';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { BusinessComponent } from './pages/business/business.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,11 @@ export const routes: Routes = [
   {
     path: 'logout',
     component: LogoutComponent,
+  },
+  {
+    path: 'business',
+    component: BusinessComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'signup',

@@ -7,8 +7,8 @@ import {
 } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { AuthState } from '../../state/reducers/auth.reducer';
-import { getIsLoggedIn } from '../../state/selectors/auth.selector';
-import { tap } from 'rxjs';
+import { getUser } from '../../state/selectors/auth.selector';
+import { map, of, tap } from 'rxjs';
 
 export const authGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot,
@@ -18,11 +18,18 @@ export const authGuard: CanActivateFn = (
   const router = inject(Router);
 
   return store.pipe(
-    select(getIsLoggedIn),
-    tap((loggedIn) => {
-      if (!loggedIn) {
-        router.navigate(['/login']);
-      }
+    select(getUser),
+    map((user) => {
+      if (!user) router.navigate(['/login']);
+
+      if (
+        user &&
+        route.routeConfig?.path == 'business' &&
+        user?.canAccessBusiness
+      )
+        return true;
+
+      return !!user;
     }),
   );
 };

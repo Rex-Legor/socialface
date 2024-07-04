@@ -45,15 +45,15 @@ server.get("/api/ads", (req, res, next) => {
 
 server.post("/auth/login", async (req, res, next) => {
   const data = await req.body;
+  const user = userData.getUsers.users.find(({ email }) => data.email == email);
 
-  if (
-    data.email == userData.getUsers.users[0].email &&
-    data.password == "123"
-  ) {
+  if (user && user.email == data.email && data.password == user.password) {
     res.status(200).send({
       user: {
-        ...userData.getUsers.users[0],
-        friends: userData.getUsers.users.slice(1),
+        ...user,
+        friends: userData.getUsers.users.filter(
+          ({ email }) => email != user.email,
+        ),
       },
     });
   } else {

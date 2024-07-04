@@ -10,8 +10,8 @@ export class FeedEffects {
     () =>
       this.actions$.pipe(
         ofType(FeedActions.getPosts),
-        exhaustMap(({ pageNumber }) =>
-          this.feedService.getPosts(pageNumber).pipe(
+        exhaustMap(({ pageNumber, userId }) =>
+          this.feedService.getPosts(pageNumber, userId).pipe(
             map(({ posts, totalPages }) =>
               FeedActions.getPostsSuccess({
                 posts,

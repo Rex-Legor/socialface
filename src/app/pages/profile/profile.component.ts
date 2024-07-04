@@ -49,8 +49,6 @@ export class ProfileComponent {
     private store: Store<FeedState>,
     private authStore: Store<AuthState>,
   ) {
-    this.getData();
-
     this.loading$ = this.store.pipe(select(getFeedLoading));
     this.errorFetching$ = this.store.pipe(select(getFeedErrorFetching));
 
@@ -62,6 +60,8 @@ export class ProfileComponent {
       .pipe(select(getUser))
       .subscribe((user) => {
         this.user.set(user);
+
+        if (this.posts().length == 0) this.getData();
       });
   }
 

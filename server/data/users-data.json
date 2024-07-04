@@ -6,8 +6,10 @@
       "lastName": "Legorreta",
       "email": "rex@mail.com",
       "country": "Mexico",
-      "birthDate": "02-20-1993",
+      "bite": "02-20-1993",
       "profilePicture": "https://i.pravatar.cc/150?img=12",
+      "password": "123",
+      "canAccessBusiness": true,
       "userGroups": [
         {
           "name": "Kittie Owners",
@@ -37,7 +39,32 @@
       "firstName": "Bram",
       "lastName": "Hellis",
       "email": "bhellis0@elegantthemes.com",
-      "profilePicture": "https://i.pravatar.cc/150"
+      "profilePicture": "https://i.pravatar.cc/150?img=13",
+      "country": "USA",
+      "bite": "01-11-1980",
+      "password": "123",
+      "userGroups": [
+        {
+          "name": "Kittie Lovers",
+          "icon": "https://img.freepik.com/premium-vector/cartoon-cute-cat-with-square-shape-square-icon-apps-games-vector-illustration-isolated_351178-23.jpg?w=360"
+        },
+        {
+          "name": "Drums and Covers",
+          "icon": "https://cdn-icons-png.flaticon.com/512/2884/2884469.png"
+        },
+        {
+          "name": "Programming Memes",
+          "icon": "https://i.pinimg.com/originals/b4/de/20/b4de205cb6d4e7cad43c2971f780cfd9.png"
+        },
+        {
+          "name": "Game Hacks",
+          "icon": "https://e7.pngegg.com/pngimages/177/691/png-clipart-black-video-game-game-controllers-computer-icons-games-game-electronics-thumbnail.png"
+        },
+        {
+          "name": "Family Stuff",
+          "icon": "https://cdn-icons-png.freepik.com/512/2829/2829825.png"
+        }
+      ]
     },
     {
       "id": 2,

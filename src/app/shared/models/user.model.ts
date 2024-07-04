@@ -11,6 +11,7 @@ export interface IUser {
   friends?: IUser[];
   phoneNumber?: string;
   profileVisibility?: boolean;
+  canAccessBusiness?: boolean;
 }
 
 interface IUserGroups {

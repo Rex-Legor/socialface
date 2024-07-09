@@ -75,7 +75,7 @@ export class ProfileComponent {
   }
 
   toggleDisplayMenu() {
-    this.displayMenu.set(!this.displayMenu);
+    this.displayMenu.set(!this.displayMenu());
   }
 
   likePost(post: IPost) {

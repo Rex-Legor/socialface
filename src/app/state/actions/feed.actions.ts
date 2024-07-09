@@ -1,7 +1,7 @@
 import { Action, createAction, props } from '@ngrx/store';
 import { IAd, IPost } from '../../shared/models/feed.model';
 
-enum FeedActionTypes {
+export enum FeedActionTypes {
   GetPosts = '[Feed Page] Get Posts',
   GetPostsSuccess = '[Feed Page] Get Posts Success',
   GetPostsError = '[Feed Page] Get Posts Error',

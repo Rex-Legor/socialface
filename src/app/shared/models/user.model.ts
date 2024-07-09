@@ -10,7 +10,7 @@ export interface IUser {
   userGroups?: IUserGroups[];
   friends?: IUser[];
   phoneNumber?: string;
-  profileVisibility?: boolean;
+  profileVisibility?: string;
   canAccessBusiness?: boolean;
 }
 

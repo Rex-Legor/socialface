@@ -20,10 +20,10 @@ export class FeedService {
   }
 
   postComment(post: IPost) {
-    return this.httpClient.post<IAd[]>('/api/post/comment', post);
+    return this.httpClient.post<void>('/api/post/comment', post);
   }
 
   postLike(post: IPost) {
-    return this.httpClient.post<IAd[]>('/api/post/like', post);
+    return this.httpClient.post<void>('/api/post/like', post);
   }
 }

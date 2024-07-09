@@ -30,7 +30,7 @@ export class AuthService {
   }
 
   updateUser(user: IUser) {
-    return this.httpClient.put<string>(
+    return this.httpClient.put<void>(
       '/api/user/update',
       { user },
       { params: { id: user.id } },

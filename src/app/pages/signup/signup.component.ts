@@ -88,7 +88,7 @@ export class SignupComponent {
         notificationPreference: this.form.get('notificationPreference')?.value,
         country: this.form.get('country')?.value,
         birthDate: this.form.get('birthDate')?.value,
-        profilePicture: this.form.get('country')?.value,
+        profilePicture: '',
       };
 
       this.store.dispatch(signUp({ user }));

@@ -12,7 +12,7 @@ interface IPostCommon {
 }
 
 export interface IPost extends IPostCommon {
-  userData: IUser;
+  userData: Partial<IUser>;
   isSponsored?: boolean;
 }
 

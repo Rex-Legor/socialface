@@ -62,7 +62,9 @@ export class FeedComponent implements OnDestroy {
 
     this.loadingSubscription = this.store
       .pipe(select(getFeedLoading))
-      .subscribe((loading) => this.loading.set(loading));
+      .subscribe((loading) => {
+        this.loading.set(loading);
+      });
     this.errorFetching$ = this.store.pipe(
       select(getFeedErrorFetching),
       tap((error) => {

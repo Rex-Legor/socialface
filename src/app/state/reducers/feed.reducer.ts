@@ -23,13 +23,8 @@ const mapPosts = (postToUpdate: IPost, state: FeedState) => {
 
   const result = postsToMap.map((post) => {
     if (post.id == postToUpdate.id) {
-      console.log('post to update: ', postToUpdate);
       if (postToUpdate.isSponsored) {
         const adToUpdate = state.ads.find(({ id }) => id == postToUpdate.id);
-        console.log('updating ad: ', {
-          ...adToUpdate,
-          ...postToUpdate,
-        });
         return {
           ...adToUpdate,
           ...postToUpdate,

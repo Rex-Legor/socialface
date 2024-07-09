@@ -25,7 +25,7 @@
         (commentChange)="commentPost(post, $event)"
         (likeChange)="likePost(post)"
       />
-      <sf-post-placeholder *ngIf="currentPage() < totalPages() || loading()" />
+      <sf-post-placeholder *ngIf="loading() || currentPage() < totalPages()" />
     </div>
   </section>
   <section

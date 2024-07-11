@@ -24,6 +24,13 @@
         *ngIf="errorMessage() == '401'"
         >Incorrect email or password</span
       >
+      <span
+        i18n="@@loginUnknownError"
+        tabindex="0"
+        class="sf-span sf-span__error"
+        *ngIf="errorMessage() == '0'"
+        >There's a server error, please try again</span
+      >
       <div class="sf-input">
         <input
           type="email"

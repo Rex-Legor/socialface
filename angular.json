@@ -26,11 +26,18 @@
             "outputPath": "dist/socialface",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": [],
             "localize": true
           },
@@ -56,7 +63,9 @@
               "sourceMap": true
             },
             "es-MX": {
-              "localize": ["es-MX"]
+              "localize": [
+                "es-MX"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -95,7 +104,9 @@
             "browserTarget": "socialface:build",
             "compodoc": false,
             "port": 6006,
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "src/styles.scss"
+            ]
           }
         },
         "build-storybook": {
@@ -106,11 +117,46 @@
             "compodoc": false,
             "outputDir": "storybook-static"
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "socialface:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "socialface:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "socialface:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "socialface:serve:production"
+            }
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "6ded16a2-db52-4baa-a302-f19423e7d699"
+    "analytics": "6ded16a2-db52-4baa-a302-f19423e7d699",
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
   }
 }

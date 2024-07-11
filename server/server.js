@@ -3,7 +3,11 @@ const middleware = jsonServer.defaults();
 const server = jsonServer.create();
 const cors = require("cors");
 
-server.use(cors());
+server.use(
+  cors({
+    origin: "http://localhost:4200",
+  }),
+);
 server.use(middleware);
 server.use(jsonServer.bodyParser);
 

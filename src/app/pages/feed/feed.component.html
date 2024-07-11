@@ -8,6 +8,7 @@
     tabindex="1"
     class="sf-feed__section"
     [ngClass]="{ 'sf-feed__section__responsive-display': displayMenu() }"
+    data-test-id="menu-sidebar"
   >
     <sf-sidebar [user]="user()" />
   </section>
@@ -32,6 +33,7 @@
     tabindex="2"
     class="sf-feed__section"
     [ngClass]="{ 'sf-feed__section__responsive-display': displayFriends() }"
+    data-test-id="friends-sidebar"
   >
     <sf-sidebar [user]="user()" [displayRightComponent]="true" />
   </section>

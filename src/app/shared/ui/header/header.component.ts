@@ -29,6 +29,7 @@ import { getUser } from '../../../state/selectors/auth.selector';
         (click)="menuButtonClick.emit()"
         aria-label="Open Menu Button"
         i18n-aria-label="@@openMenuButton"
+        id="openMenuButton"
       >
         <i-feather name="menu"></i-feather>
       </button>
@@ -49,6 +50,7 @@ import { getUser } from '../../../state/selectors/auth.selector';
         class="sf-header__section__chat-button"
         aria-label="Open Friends List Button"
         i18n-aria-label="@@openFriendsButton"
+        id="openFriendsButton"
       >
         <i-feather name="message-circle"></i-feather>
       </button>
@@ -57,6 +59,7 @@ import { getUser } from '../../../state/selectors/auth.selector';
           (click)="toggleDisplayProfileOptions()"
           aria-label="Open User Options"
           i18n-aria-label="@@openUSerOptionsButton"
+          id="openUserOptionsButton"
         >
           <img
             tabindex="0"

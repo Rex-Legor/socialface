@@ -40,6 +40,8 @@ const config: Config = {
     './src/app/pages/business/business.component.ts',
     '.routes.ts',
     './src/app/evironment/environment.dev.ts',
+    '.cy',
+    'e2e',
   ],
 
   // Indicates which provider should be used to instrument code for coverage

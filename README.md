@@ -1,4 +1,11 @@
 # Social Face Challenge 
+
+## Table of contents
+- [Description](#description)
+- [Requirements](#requirements)
+- [Tech Stack](#tech-stack) 
+- [How to run the project](#how-to-run-the-project) 
+
 ## Description
 
 This is a challenge project required by Unosquare for evaluating **Ricardo Legorreta** for the Senior Developer position.
@@ -6,7 +13,7 @@ The goal is to develop a simple *Social Network* application that should satisfy
 
 > I want to take this opportunity to **thank** those who helped me to start
 > this promotion process and the people involved as well.
-**Thanks to Luis Castro, Luis Naranjo and Juan Figueroa.**
+>**Thanks to Luis Castro, Luis Naranjo and Juan Figueroa.**
 > Thanks a lot and God bless you all!
 
 ## Requirements

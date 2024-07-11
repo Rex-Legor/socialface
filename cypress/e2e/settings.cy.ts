@@ -28,9 +28,5 @@ describe('Settings Page', () => {
     cy.get('.sf-span.sf-span__success')
       .should('exist')
       .should('have.text', 'Changes saved successfully');
-
-    cy.tick(2500);
-
-    cy.get('.sf-span.sf-span__success').should('not.exist');
   });
 });

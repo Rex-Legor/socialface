@@ -23,21 +23,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/socialface",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": [],
             "localize": true
           },
@@ -63,9 +56,7 @@
               "sourceMap": true
             },
             "es-MX": {
-              "localize": [
-                "es-MX"
-              ]
+              "localize": ["es-MX"]
             }
           },
           "defaultConfiguration": "production"
@@ -104,9 +95,7 @@
             "browserTarget": "socialface:build",
             "compodoc": false,
             "port": 6006,
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           }
         },
         "build-storybook": {
@@ -154,9 +143,6 @@
   },
   "cli": {
     "analytics": "6ded16a2-db52-4baa-a302-f19423e7d699",
-    "schematicCollections": [
-      "@cypress/schematic",
-      "@schematics/angular"
-    ]
+    "schematicCollections": ["@cypress/schematic", "@schematics/angular"]
   }
 }

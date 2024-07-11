@@ -5,8 +5,17 @@ import { AuthService } from '../../shared/services/auth.service';
 import { catchError, exhaustMap, map, of } from 'rxjs';
 import { IAuthErrorResponse } from '../../shared/models/auth.model';
 
+/**
+ * Effects component.
+ * Check NgRx effects for more information.
+ *
+ * @author Ricardo Legorreta Mendoza
+ */
 @Injectable()
 export class AuthEffects {
+  /**
+   * effect function automatically called when dispatching AuthActions.login function.
+   */
   logins$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -23,6 +32,9 @@ export class AuthEffects {
     { useEffectsErrorHandler: false },
   );
 
+  /**
+   * effect function automatically called when dispatching AuthActions.signup function.
+   */
   signup$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -45,6 +57,9 @@ export class AuthEffects {
     { useEffectsErrorHandler: false },
   );
 
+  /**
+   * effect function automatically called when dispatching AuthActions.resetPassword function.
+   */
   resetPassword$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -65,6 +80,9 @@ export class AuthEffects {
     { useEffectsErrorHandler: false },
   );
 
+  /**
+   * effect function called automatically when dispatching AuthActions.updateUser function.
+   */
   updateUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.updateUser),

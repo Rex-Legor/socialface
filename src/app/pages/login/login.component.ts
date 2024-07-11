@@ -24,6 +24,10 @@ import {
 } from '../../state/selectors/auth.selector';
 import { Router, RouterModule } from '@angular/router';
 
+/**
+ * Page component for login.
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-login.page',
   standalone: true,
@@ -39,6 +43,13 @@ export class LoginComponent implements OnDestroy {
   loading$: Observable<boolean>;
   loggedInSubscribe: Subscription;
 
+  /**
+   * This constructor initializes a FormGroup and gets some properties from the store.
+   * It also redirects logged in user to the feed page.
+   * @param fb - Injects FormBuilder
+   * @param store - Injects auth store
+   * @param router - Injects Router
+   */
   constructor(
     private fb: FormBuilder,
     private store: Store<AuthState>,
@@ -62,6 +73,9 @@ export class LoginComponent implements OnDestroy {
       });
   }
 
+  /**
+   * Handles on submit form.
+   */
   onSubmit() {
     const emailControl = this.form.get('email');
     emailControl?.markAsTouched();
@@ -75,6 +89,9 @@ export class LoginComponent implements OnDestroy {
     }
   }
 
+  /**
+   * Used for unsubscribing variables.
+   */
   ngOnDestroy() {
     this.loggedInSubscribe.unsubscribe();
   }

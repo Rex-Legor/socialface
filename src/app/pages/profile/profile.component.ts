@@ -27,6 +27,10 @@ import {
 } from '../../state/selectors/feed.selector';
 import { IconsModule } from '../../shared/icons/icons.module';
 
+/**
+ * Page component for displaying user profile information and user shared posts.
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-profile',
   standalone: true,
@@ -45,6 +49,12 @@ export class ProfileComponent {
   postsSub: Subscription;
   userSubscription: Subscription;
 
+  /**
+   * Gets loading and error properties from the feed store, it also
+   * listens for the user posts and gets the user data.
+   * @param store - Injects feed store.
+   * @param authStore - Injects auth store.
+   */
   constructor(
     private store: Store<FeedState>,
     private authStore: Store<AuthState>,
@@ -65,25 +75,44 @@ export class ProfileComponent {
       });
   }
 
+  /**
+   * Used to unsubscribe variables.
+   */
   ngOnDestroy() {
     this.postsSub.unsubscribe();
     this.userSubscription.unsubscribe();
   }
 
+  /**
+   * Calls for get user posts using dispatch.
+   */
   getData() {
     this.store.dispatch(getPosts({ pageNumber: 1, userId: this.user()?.id }));
   }
 
+  /**
+   * When the screen width is below 1280 the menu sidebar gets hidden and a new button gets displayed on the header at the left,
+   * clicking that button displays/hides the menu sidebar.
+   */
   toggleDisplayMenu() {
     this.displayMenu.set(!this.displayMenu());
   }
 
+  /**
+   * Self descriptive.
+   * @param post
+   */
   likePost(post: IPost) {
     const newPost = { ...post };
     newPost.liked = !post.liked;
     this.store.dispatch(postLike({ post: newPost }));
   }
 
+  /**
+   * Self descriptive.
+   * @param post
+   * @param comment
+   */
   commentPost(post: IPost, comment: string) {
     const newPost = { ...post };
     const newComment: IPostComment = {
@@ -98,5 +127,11 @@ export class ProfileComponent {
     this.store.dispatch(postComment({ post: newPost }));
   }
 
+  /**
+   * Used for tracking rendered posts by id in order to avoid unnecesary re-renders.
+   * @param index
+   * @param item
+   * @returns post id
+   */
   trackByPostId = (index: number, item: IPost) => item.id;
 }

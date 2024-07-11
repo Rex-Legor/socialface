@@ -23,6 +23,10 @@ import { exportCsv } from './settings.helper';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { updateUser } from '../../state/actions/auth.actions';
 
+/**
+ * Page component for displaying user settings.
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-settings',
   standalone: true,
@@ -46,6 +50,11 @@ export class SettingsComponent {
 
   userSubscription: Subscription;
 
+  /**
+   * Initializes a form group, gets the user data and sets the user data in the form.
+   * @param fb - Injects FormBuilder
+   * @param authStore - Injects auth store
+   */
   constructor(
     private fb: FormBuilder,
     private authStore: Store<AuthState>,
@@ -72,6 +81,9 @@ export class SettingsComponent {
       });
   }
 
+  /**
+   * Creates and download a csv file containing all the user data.
+   */
   exportSettings() {
     exportCsv({
       'First Name': this.form.get('firstName')?.value,
@@ -85,6 +97,9 @@ export class SettingsComponent {
     });
   }
 
+  /**
+   * Handles on submit.
+   */
   saveSettings() {
     if (this.form.invalid) return;
     const newUser = { ...this.user(), ...this.form.value };

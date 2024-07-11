@@ -4,8 +4,17 @@ import { Injectable, inject } from '@angular/core';
 import { catchError, exhaustMap, map, of } from 'rxjs';
 import { FeedService } from '../../shared/services/feed.service';
 
+/**
+ * Effects component.
+ * Check NgRx effects for more information.
+ *
+ * @author Ricardo Legorreta Mendoza
+ */
 @Injectable()
 export class FeedEffects {
+  /**
+   * effect function called automatically when dispatching FeedActions.getPost function.
+   */
   getPosts$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -26,6 +35,9 @@ export class FeedEffects {
     { useEffectsErrorHandler: true },
   );
 
+  /**
+   * effect function called automatically when dispatching FeedActions.getAds function.
+   */
   getAds$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -40,6 +52,9 @@ export class FeedEffects {
     { useEffectsErrorHandler: true },
   );
 
+  /**
+   * effect function called automatically when dispatching FeedActions.postComment function.
+   */
   postComment$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -53,6 +68,9 @@ export class FeedEffects {
     { useEffectsErrorHandler: true },
   );
 
+  /**
+   * effect function called automatically when dispatching FeedActions.postLike function.
+   */
   postLike$ = createEffect(
     () =>
       this.actions$.pipe(

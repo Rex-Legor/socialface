@@ -5,6 +5,11 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * UI presentation component used to indicate that a page is getting posts from the api.
+ *
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-post-placeholder',
   template: `
@@ -36,8 +41,4 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class PostPlaceholderComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class PostPlaceholderComponent {}

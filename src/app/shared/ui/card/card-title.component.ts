@@ -6,6 +6,12 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * UI presentation component used along with <sf-card> for displaying text at the top position,
+ * currently used for displaying a user full name in a post.
+ *
+ * * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-card-title',
   template: `<h3 tabindex="0"><ng-content></ng-content></h3>`,

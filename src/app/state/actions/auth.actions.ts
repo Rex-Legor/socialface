@@ -17,57 +17,89 @@ enum AuthActionTypes {
   Logout = '[Logout Page] Logout',
 }
 
+/**
+ * Called from auth effects for making api call.
+ */
 export const login = createAction(
   AuthActionTypes.Login,
   props<{ email: string; password: string }>(),
 );
 
+/** Restores to initial state in the reducer. */
 export const logout = createAction(AuthActionTypes.Logout);
 
+/**
+ * Passes the user obtained from the api call made from auth effects.
+ */
 export const loginSuccess = createAction(
   AuthActionTypes.LoginSuccess,
   props<{ user: IUser }>(),
 );
 
+/**
+ * Passes the api call error made from auth effects.
+ */
 export const loginError = createAction(
   AuthActionTypes.LoginError,
   props<{ errorMessage: string }>(),
 );
 
+/** Called from auth effects for making api call. */
 export const signUp = createAction(
   AuthActionTypes.SignUp,
   props<{ user: IUser }>(),
 );
 
+/**
+ * Passes the user obtained from the api call made from auth effects.
+ */
 export const signupSuccess = createAction(
   AuthActionTypes.SignUpSuccess,
   props<{ user: IUser }>(),
 );
 
+/**
+ * Passes the api call error made from auth effects.
+ */
 export const signupError = createAction(
   AuthActionTypes.SignUpError,
   props<{ errorMessage: string }>(),
 );
 
+/**
+ * Called from auth effects for making api call.
+ */
 export const resetPassword = createAction(
   AuthActionTypes.ResetPassword,
   props<{ email: string }>(),
 );
 
+/**
+ * Updates the auth reducer for indicating reset password success.
+ */
 export const resetPasswordSuccess = createAction(
   AuthActionTypes.ResetPasswordSuccess,
 );
 
+/**
+ * Passes the api call error made from auth effects.
+ */
 export const resetPasswordError = createAction(
   AuthActionTypes.ResetPasswordError,
   props<{ errorMessage: string }>(),
 );
 
+/**
+ * Called from auth effects for making api call.
+ */
 export const updateUser = createAction(
   AuthActionTypes.UpdateUser,
   props<{ user: IUser }>(),
 );
 
+/**
+ * Upodates the auth reducer with the updated user.
+ */
 export const updateUserSuccess = createAction(
   AuthActionTypes.UpdateUserSuccess,
   props<{ user: IUser }>(),

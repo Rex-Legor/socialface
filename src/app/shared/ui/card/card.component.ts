@@ -1,6 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+/**
+ * UI presentation Component for displaying a portion of a post,
+ * typically including user informaton and post date.
+ *
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-card',
   template: `<div class="sf-card">

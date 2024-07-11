@@ -14,7 +14,9 @@
     "i18n:extract": "ng extract-i18n --output-path src/locales",
     "mock:server": "nodemon server/server.js --ext js,ts,json,html",
     "e2e": "ng e2e",
-    "cypress:run": "ng run socialface:cypress-run"
+    "cypress:run": "ng run socialface:cypress-run",
+    "typedoc": "typedoc",
+    "docs": "npm run typedoc -- --options typedoc.json"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +35,7 @@
     "ngx-mask": "^17.0.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "typedoc": "^0.26.4",
     "util": "^0.12.5",
     "zone.js": "~0.14.3"
   },

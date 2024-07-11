@@ -18,6 +18,13 @@ export const initialState: FeedState = {
   totalPostPages: 1,
 };
 
+/**
+ * Takes a post to replace the original one, it can be an ad mapped as a post, in that case
+ * this function will replace the ad with the new post.
+ * @param postToUpdate
+ * @param state
+ * @returns
+ */
 const mapPosts = (postToUpdate: IPost, state: FeedState) => {
   const postsToMap = postToUpdate.isSponsored ? state.ads : state.posts;
 
@@ -39,6 +46,9 @@ const mapPosts = (postToUpdate: IPost, state: FeedState) => {
   else return { posts: result as IPost[] };
 };
 
+/**
+ * Creates a reducer for the feed.
+ */
 export const feedReducer = createReducer(
   initialState,
   on(FeedActions.getPosts, (state) => ({

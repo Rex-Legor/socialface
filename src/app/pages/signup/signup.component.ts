@@ -26,6 +26,10 @@ import { UIModule } from '../../shared/ui/ui.module';
 import { IUser } from '../../shared/models/user.model';
 import { AutocompleteDirective } from '../../shared/directives/autocomplete.directive';
 
+/**
+ * Page component for signup.
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-signup',
   standalone: true,
@@ -47,6 +51,13 @@ export class SignupComponent {
 
   birthdatePLaceholder = $localize`:@@birthdate:Birthdate`;
 
+  /**
+   * Initializes a formm group, gets loading and error state properties and
+   * redirects logged in users to the feed page.
+   * @param fb - Injects FormBuilder.
+   * @param store - Injects auth store.
+   * @param router - injects Router.
+   */
   constructor(
     private fb: FormBuilder,
     private store: Store<AuthState>,
@@ -72,10 +83,17 @@ export class SignupComponent {
     });
   }
 
+  /**
+   * Called when selected/entered country value from auto complete input.
+   * @param country
+   */
   onCountrySelect(country: string) {
     this.form.get('country')?.setValue(country);
   }
 
+  /**
+   * Handles form submit.
+   */
   onSubmit() {
     this.form.markAllAsTouched();
 

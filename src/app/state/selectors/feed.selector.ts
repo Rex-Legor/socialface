@@ -4,33 +4,42 @@ import { IPost } from '../../shared/models/feed.model';
 
 export const feedSelectorKey = 'feed';
 
+/** Creates a selector for the whole feed state */
 export const getFeedState = createFeatureSelector<FeedState>(feedSelectorKey);
 
+/** Creates a selector for the feed state.loading */
 export const getFeedLoading = createSelector(
   getFeedState,
   (state: FeedState) => state.loading,
 );
 
+/** Creates a selector for the feed state.errorFetching */
 export const getFeedErrorFetching = createSelector(
   getFeedState,
   (state: FeedState) => state.errorFetching,
 );
 
+/** Creates a selector for the feed state.posts */
 export const getFeedPosts = createSelector(
   getFeedState,
   (state: FeedState) => state.posts,
 );
 
+/** Creates a selector for the feed state.totalPostPages */
 export const getFeedTotalPages = createSelector(
   getFeedState,
   (state: FeedState) => state.totalPostPages,
 );
 
+/** Creates a selector for the feed state.ads */
 export const getFeedAds = createSelector(
   getFeedState,
   (state: FeedState) => state.ads,
 );
 
+/** Creates a selector for concatenating the feed state.posts and state.ads,
+ * the state.ads are all mapped in the format of a post.
+ */
 export const getFeedCombinedPosts = createSelector(
   getFeedState,
   (state: FeedState) => {

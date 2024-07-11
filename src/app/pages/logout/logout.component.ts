@@ -12,6 +12,10 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { getUser } from '../../state/selectors/auth.selector';
 
+/**
+ * Page component with no html content used for logout.
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-logout',
   standalone: true,
@@ -22,6 +26,11 @@ import { getUser } from '../../state/selectors/auth.selector';
 export class LogoutComponent implements OnDestroy {
   userSubscription: Subscription;
 
+  /**
+   * Dispatches logout and then redirects the user to the login page.
+   * @param store - Injects auth store.
+   * @param router - Injects Router
+   */
   constructor(
     private store: Store<AuthState>,
     private router: Router,
@@ -34,6 +43,9 @@ export class LogoutComponent implements OnDestroy {
       });
   }
 
+  /**
+   * Used for unsubscribing variables.
+   */
   ngOnDestroy() {
     this.userSubscription.unsubscribe();
   }

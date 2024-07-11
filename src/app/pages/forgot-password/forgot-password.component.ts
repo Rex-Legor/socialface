@@ -18,6 +18,10 @@ import {
 } from '../../state/selectors/auth.selector';
 import { resetPassword } from '../../state/actions/auth.actions';
 
+/**
+ * Page component for restoring password.
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-forgot-password',
   standalone: true,
@@ -32,6 +36,11 @@ export class ForgotPasswordComponent {
   loading$: Observable<boolean>;
   resetSuccess$: Observable<boolean>;
 
+  /**
+   * This constructor initializes a form group and gets store properties.
+   * @param fb - Injects FormBuilder
+   * @param store - Injects auth store
+   */
   constructor(
     private fb: FormBuilder,
     private store: Store<AuthState>,
@@ -55,6 +64,9 @@ export class ForgotPasswordComponent {
     );
   }
 
+  /**
+   * Handles on submit form.
+   */
   onSubmit() {
     const emailControl = this.form.get('email');
     emailControl?.markAsTouched();

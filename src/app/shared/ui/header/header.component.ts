@@ -14,6 +14,11 @@ import { IUser } from '../../models/user.model';
 import { Subscription } from 'rxjs';
 import { getUser } from '../../../state/selectors/auth.selector';
 
+/**
+ * UI header smart component, displayins user information and has ouputs when clicking a few buttons.
+ *
+ * * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-header',
   template: `<header class="sf-header" tabindex="0">
@@ -110,9 +115,15 @@ export class HeaderComponent implements OnDestroy {
   userSubscription: Subscription;
   displayProfileOptions = false;
 
+  /** Emits when user clicks on the menu button, used to show/hide the menu sidebar in a page. */
   @Output() menuButtonClick = new EventEmitter<void>();
+  /** Emits when user clicks on the open friends button, used to show/hide the friends sidebar in a page. */
   @Output() friendsButtonClick = new EventEmitter<void>();
 
+  /**
+   * Subscribes to the auth store to get the user data.
+   * @param authStore - Injects auth store
+   */
   constructor(private authStore: Store<AuthState>) {
     this.userSubscription = this.authStore
       .pipe(select(getUser))
@@ -121,10 +132,16 @@ export class HeaderComponent implements OnDestroy {
       });
   }
 
+  /**
+   * Used to display/hide the user profile options floating element.
+   */
   toggleDisplayProfileOptions() {
     this.displayProfileOptions = !this.displayProfileOptions;
   }
 
+  /**
+   * Unsubscribes a variable.
+   */
   ngOnDestroy() {
     this.userSubscription.unsubscribe();
   }

@@ -29,6 +29,13 @@ import { IUser } from '../../shared/models/user.model';
 import { AuthState } from '../../state/reducers/auth.reducer';
 import { IconsModule } from '../../shared/icons/icons.module';
 
+/**
+ * This page component contains the key piece of the application: it displays
+ * posts and displays an advertising after 4 posts.
+ * Users can interact with the posts by liking and comment on them.
+ *
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-feed',
   standalone: true,
@@ -54,6 +61,13 @@ export class FeedComponent implements OnDestroy {
   currentPage = signal(1);
   totalPages = signal(1);
 
+  /**
+   * This constructor initializes some important variables containing information obtained from the stores,
+   * that includes posts, ads, loading state, total post pages and user data.
+   *
+   * @param store - Injected feed store for managing posts and ads
+   * @param authStore - Injected auth store for managing user
+   */
   constructor(
     private store: Store<FeedState>,
     private authStore: Store<AuthState>,
@@ -88,6 +102,9 @@ export class FeedComponent implements OnDestroy {
       });
   }
 
+  /**
+   * For unsubscribe multiple subscriptions.
+   */
   ngOnDestroy() {
     this.postsSub.unsubscribe();
     this.userSubscription.unsubscribe();
@@ -95,6 +112,7 @@ export class FeedComponent implements OnDestroy {
     this.loadingSubscription.unsubscribe();
   }
 
+  /** This is used for pagination purposes, when the user scrolls to the bottom of the screen we will get more posts. */
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     const pos =
@@ -106,6 +124,7 @@ export class FeedComponent implements OnDestroy {
     }
   }
 
+  /** Calls for more posts using dispatch. */
   getPosts() {
     if (!this.loading() && this.currentPage() <= this.totalPages()) {
       this.store.dispatch(getPosts({ pageNumber: this.currentPage() }));
@@ -113,27 +132,45 @@ export class FeedComponent implements OnDestroy {
     }
   }
 
+  /** Calls for posts and ads using dispatch. */
   getData() {
     this.getPosts();
     this.store.dispatch(getAds());
   }
 
+  /**
+   * When the screen width is below 1280 the menu sidebar gets hidden and a new button gets displayed on the header at the left,
+   * clicking that button displays/hides the menu sidebar.
+   */
   toggleDisplayMenu() {
     const displayMenu = this.displayMenu();
     this.displayMenu.set(!displayMenu);
   }
 
+  /**
+   * When the screen width is below 1024 the friends sidebar gets hidden and a new button gets displayed on the header at the right,
+   * clicking that button displays/hides the friends sidebar.
+   */
   toggleDisplayFrieds() {
     const displayFriends = this.displayFriends();
     this.displayFriends.set(!displayFriends);
   }
 
+  /**
+   * Self descriptive.
+   * @param post
+   */
   likePost(post: IPost) {
     const newPost = { ...post };
     newPost.liked = !post.liked;
     this.store.dispatch(postLike({ post: newPost }));
   }
 
+  /**
+   * Self descriptive.
+   * @param post
+   * @param comment
+   */
   commentPost(post: IPost, comment: string) {
     const newPost = { ...post };
     const newComment: IPostComment = {
@@ -148,5 +185,11 @@ export class FeedComponent implements OnDestroy {
     this.store.dispatch(postComment({ post: newPost }));
   }
 
+  /**
+   * Used for tracking rendered posts by id in order to avoid unnecesary re-renders.
+   * @param index
+   * @param item
+   * @returns post id
+   */
   trackByPostId = (index: number, item: IPost) => item.id;
 }

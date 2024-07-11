@@ -7,6 +7,11 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * UI smart component used to indicate the user that there was an error when fetching posts from the api.
+ *
+ * @author Ricardo Legorreta Mendoza
+ */
 @Component({
   selector: 'sf-post-refresh',
   template: `
@@ -39,5 +44,6 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class PostRefreshComponent {
+  /** Emits when user clicks on the Reload button */
   @Output() onRefresh = new EventEmitter<void>();
 }

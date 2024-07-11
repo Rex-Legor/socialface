@@ -20,6 +20,9 @@ export const initialState: AuthState = {
   resetPasswordSuccess: false,
 };
 
+/**
+ * Creates a reducer for authentication.
+ */
 export const authReducer = createReducer(
   initialState,
   on(AuthActions.login, (state) => ({

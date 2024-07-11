@@ -13,6 +13,9 @@ import { feedSelectorKey } from './state/selectors/feed.selector';
 import { feedReducer } from './state/reducers/feed.reducer';
 import { FeedEffects } from './state/effects/feed.effects';
 
+/**
+ * Application config providers.
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),

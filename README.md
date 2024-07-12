@@ -85,3 +85,14 @@ There's a list of all the commands available for the project:
  10. `npm run docs` Generates project documentation for the codebase in HTML format (at the ./docs folder).
 
 ## CI/CD Pipeline
+For Continuous Integration and Continuous Deployment the easiest way was to implement GitHub Actions,
+in order to configured it I followed the following tutorial: https://www.youtube.com/watch?v=SMuB3qYjDUw
+The process consist on the following steps:
+
+1. Add build:prod script to the package.json
+2. Create a new main.yaml file with the build instructions (copied from the tutorial repo).
+3. Create a new token in GitHub > (Profile) Settings > Developer Options.
+4. Add the new token to the repository Settings > Actions > Create New Action.
+5. Create a new 'prod' branch and delete everything.
+6. Configure the new branch in the repository Settings > Pages in the 'Branch' section.
+7. Deploy.

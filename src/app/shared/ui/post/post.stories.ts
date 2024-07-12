@@ -6,10 +6,10 @@ import {
 } from '@storybook/angular';
 
 import { PostComponent } from './post.component';
-import { fn } from '@storybook/test';
 import { FormsModule } from '@angular/forms';
 import { IconsModule } from '../../icons/icons.module';
 import { UIModule } from '../ui.module';
+import postsData from '../../../../../server/data/posts-data.json';
 
 const meta: Meta<PostComponent> = {
   title: 'UI/Post',
@@ -26,47 +26,29 @@ const meta: Meta<PostComponent> = {
   ],
 };
 
+const postToTest = {
+  ...postsData.posts[0],
+  id: '1',
+  userData: {
+    ...postsData.posts[0].userData,
+    id: '2',
+  },
+};
+
 export default meta;
 type Story = StoryObj<PostComponent>;
 
 export const Base: Story = {
   args: {
-    avatar: 'https://i.pravatar.cc/150?img=3',
-    title: 'This is my me',
-    subtitle: 'This is a description',
-    picture: 'https://picsum.photos/800',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    post: postToTest,
   },
-
-  render: (args: PostComponent) => ({
-    props: {
-      ...args,
-    },
-    template: `<div style="width: 600px">
-    <sf-post ${argsToTemplate(args)}>
-    </sf-post>
-    </div>`,
-  }),
 };
 
-export const NoPicture: Story = {
+export const Liked: Story = {
   args: {
-    avatar: 'https://i.pravatar.cc/150?img=4',
-    title: 'This is another post',
-    subtitle: 'This is a description',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    liked: true,
-  },
-
-  render: (args: PostComponent) => ({
-    props: {
-      ...args,
+    post: {
+      ...postToTest,
+      liked: true,
     },
-    template: `<div style="width: 600px">
-    <sf-post ${argsToTemplate(args)}>
-    </sf-post>
-    </div>`,
-  }),
+  },
 };

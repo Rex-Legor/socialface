@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
-  ViewEncapsulation,
   signal,
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -12,16 +11,16 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Observable, Subscription, of } from 'rxjs';
-import { UIModule } from '../../shared/ui/ui.module';
-import { IUser } from '../../shared/models/user.model';
-import { Store, select } from '@ngrx/store';
-import { getUser } from '../../state/selectors/auth.selector';
-import { AuthState } from '../../state/reducers/auth.reducer';
-
-import { exportCsv } from './settings.helper';
+import { select, Store } from '@ngrx/store';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { Subscription } from 'rxjs';
+
+import { IUser } from '../../shared/models/user.model';
+import { UIModule } from '../../shared/ui/ui.module';
 import { updateUser } from '../../state/actions/auth.actions';
+import { AuthState } from '../../state/reducers/auth.reducer';
+import { getUser } from '../../state/selectors/auth.selector';
+import { exportCsv } from './settings.helper';
 
 /**
  * Page component for displaying user settings.

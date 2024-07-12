@@ -1,15 +1,11 @@
-import { CommonModule } from '@angular/common';
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  ContentChild,
-  ElementRef,
   EventEmitter,
   Input,
   Output,
-  ViewChild,
 } from '@angular/core';
+
 import { IPost } from '../../models/feed.model';
 
 /**

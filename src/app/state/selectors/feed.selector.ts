@@ -1,6 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { FeedState } from '../reducers/feed.reducer';
+
 import { IPost } from '../../shared/models/feed.model';
+import { FeedState } from '../reducers/feed.reducer';
 
 export const feedSelectorKey = 'feed';
 
@@ -43,8 +44,8 @@ export const getFeedAds = createSelector(
 export const getFeedCombinedPosts = createSelector(
   getFeedState,
   (state: FeedState) => {
-    const posts = state.posts;
-    const ads = state.ads;
+    const { posts } = state;
+    const { ads } = state;
     const feedPosts: IPost[] = [];
 
     let adsIndex = 0;

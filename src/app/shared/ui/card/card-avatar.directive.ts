@@ -7,6 +7,4 @@ import { Directive } from '@angular/core';
  * * @author Ricardo Legorreta Mendoza
  */
 @Directive({ selector: '[sf-card-avatar]' })
-export class CardAvatarDirective {
-  constructor() {}
-}
+export class CardAvatarDirective {}

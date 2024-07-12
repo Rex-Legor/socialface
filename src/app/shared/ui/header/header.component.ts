@@ -1,18 +1,17 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  Input,
   OnDestroy,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { AuthState } from '../../../state/reducers/auth.reducer';
-import { Store, select } from '@ngrx/store';
-import { IUser } from '../../models/user.model';
+import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+
+import { AuthState } from '../../../state/reducers/auth.reducer';
 import { getUser } from '../../../state/selectors/auth.selector';
+import { IUser } from '../../models/user.model';
 
 /**
  * UI header smart component, displayins user information and has ouputs when clicking a few buttons.

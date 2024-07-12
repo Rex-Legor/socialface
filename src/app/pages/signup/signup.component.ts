@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
-  OnDestroy,
-  ViewEncapsulation,
   signal,
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -13,18 +11,19 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { Store, select } from '@ngrx/store';
-import { login, signUp } from '../../state/actions/auth.actions';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { AutocompleteDirective } from '../../shared/directives/autocomplete.directive';
+import { IUser } from '../../shared/models/user.model';
+import { UIModule } from '../../shared/ui/ui.module';
+import { signUp } from '../../state/actions/auth.actions';
 import { AuthState } from '../../state/reducers/auth.reducer';
 import {
-  getLoginLoading,
-  getLoginErrorType,
   getIsLoggedIn,
+  getLoginErrorType,
+  getLoginLoading,
 } from '../../state/selectors/auth.selector';
-import { Observable } from 'rxjs';
-import { UIModule } from '../../shared/ui/ui.module';
-import { IUser } from '../../shared/models/user.model';
-import { AutocompleteDirective } from '../../shared/directives/autocomplete.directive';
 
 /**
  * Page component for signup.

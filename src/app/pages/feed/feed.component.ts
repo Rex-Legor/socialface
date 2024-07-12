@@ -1,33 +1,33 @@
 import { CommonModule } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
   HostListener,
   OnDestroy,
-  ViewEncapsulation,
   signal,
+  ViewEncapsulation,
 } from '@angular/core';
-import { UIModule } from '../../shared/ui/ui.module';
-import { FeedState } from '../../state/reducers/feed.reducer';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subscription, tap } from 'rxjs';
+
+import { IconsModule } from '../../shared/icons/icons.module';
 import { IPost, IPostComment } from '../../shared/models/feed.model';
+import { IUser } from '../../shared/models/user.model';
+import { UIModule } from '../../shared/ui/ui.module';
 import {
   getAds,
   getPosts,
   postComment,
   postLike,
 } from '../../state/actions/feed.actions';
+import { AuthState } from '../../state/reducers/auth.reducer';
+import { FeedState } from '../../state/reducers/feed.reducer';
+import { getUser } from '../../state/selectors/auth.selector';
 import {
   getFeedCombinedPosts,
   getFeedErrorFetching,
   getFeedLoading,
   getFeedTotalPages,
 } from '../../state/selectors/feed.selector';
-import { getUser } from '../../state/selectors/auth.selector';
-import { IUser } from '../../shared/models/user.model';
-import { AuthState } from '../../state/reducers/auth.reducer';
-import { IconsModule } from '../../shared/icons/icons.module';
 
 /**
  * This page component contains the key piece of the application: it displays
@@ -148,8 +148,8 @@ export class FeedComponent implements OnDestroy {
   }
 
   /**
-   * When the screen width is below 1024 the friends sidebar gets hidden and a new button gets displayed on the header at the right,
-   * clicking that button displays/hides the friends sidebar.
+   * When the screen width is below 1024 the friends sidebar gets hidden and a new button
+   * gets displayed on the header at the right, clicking that button displays/hides the friends sidebar.
    */
   toggleDisplayFrieds() {
     const displayFriends = this.displayFriends();
@@ -191,5 +191,6 @@ export class FeedComponent implements OnDestroy {
    * @param item
    * @returns post id
    */
+  // eslint-disable-next-line class-methods-use-this
   trackByPostId = (index: number, item: IPost) => item.id;
 }

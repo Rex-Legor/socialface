@@ -19,7 +19,7 @@
     i18n-aria-label="@@feedPosts"
   >
     <div class="sf-feed__content__posts">
-      <sf-post-refresh (onRefresh)="getData()" *ngIf="errorFetching$ | async" />
+      <sf-post-refresh (refresh)="getData()" *ngIf="errorFetching$ | async" />
       <sf-post
         *ngFor="let post of feedPosts(); trackBy: trackByPostId"
         [post]="post"

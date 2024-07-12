@@ -1,11 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import {
   IAuth,
-  IAuthErrorResponse,
   IAuthSuccessResponse,
 } from '../models/auth.model';
-import { HttpClient } from '@angular/common/http';
-import { catchError, of } from 'rxjs';
 import { IUser } from '../models/user.model';
 
 /**

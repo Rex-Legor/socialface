@@ -1,28 +1,27 @@
 import { CommonModule } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
   OnDestroy,
-  ViewEncapsulation,
   signal,
+  ViewEncapsulation,
 } from '@angular/core';
-import { UIModule } from '../../shared/ui/ui.module';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
-import { AuthState } from '../../state/reducers/auth.reducer';
-import { login } from '../../state/actions/auth.actions';
+import { Router, RouterModule } from '@angular/router';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
+
+import { login } from '../../state/actions/auth.actions';
+import { AuthState } from '../../state/reducers/auth.reducer';
 import {
   getIsLoggedIn,
   getLoginErrorType,
   getLoginLoading,
 } from '../../state/selectors/auth.selector';
-import { Router, RouterModule } from '@angular/router';
 
 /**
  * Page component for login.

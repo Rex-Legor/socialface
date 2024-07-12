@@ -1,6 +1,7 @@
-import * as AuthActions from '../actions/auth.actions';
 import { createReducer, on } from '@ngrx/store';
+
 import { IUser } from '../../shared/models/user.model';
+import * as AuthActions from '../actions/auth.actions';
 
 export interface AuthState {
   isLoggedIn: boolean;
@@ -79,7 +80,7 @@ export const authReducer = createReducer(
     isLoggedIn: false,
   })),
 
-  on(AuthActions.resetPasswordSuccess, (state, response) => ({
+  on(AuthActions.resetPasswordSuccess, (state) => ({
     ...state,
     loading: false,
     errorMessage: '',

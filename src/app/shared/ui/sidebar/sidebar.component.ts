@@ -1,12 +1,12 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   Input,
   ViewEncapsulation,
 } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { IUser } from '../../models/user.model';
-import { ActivatedRoute, Router } from '@angular/router';
 
 /**
  * UI smart component used to display the left and right sidebars on a page.

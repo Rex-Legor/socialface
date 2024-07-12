@@ -1,15 +1,14 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   OnDestroy,
-  OnInit,
 } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { AuthState } from '../../state/reducers/auth.reducer';
-import { logout } from '../../state/actions/auth.actions';
 import { Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+
+import { logout } from '../../state/actions/auth.actions';
+import { AuthState } from '../../state/reducers/auth.reducer';
 import { getUser } from '../../state/selectors/auth.selector';
 
 /**
@@ -20,7 +19,7 @@ import { getUser } from '../../state/selectors/auth.selector';
   selector: 'sf-logout',
   standalone: true,
   imports: [],
-  template: ``,
+  template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LogoutComponent implements OnDestroy {

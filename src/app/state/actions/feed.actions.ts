@@ -1,4 +1,5 @@
-import { Action, createAction, props } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
+
 import { IAd, IPost } from '../../shared/models/feed.model';
 
 export enum FeedActionTypes {

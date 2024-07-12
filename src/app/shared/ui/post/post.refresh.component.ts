@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  OnInit,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
@@ -30,7 +29,7 @@ import {
       </p>
       <button
         class="sf-button primary"
-        (click)="onRefresh.emit()"
+        (click)="refresh.emit()"
         aria-label="Reload"
         i18n="@@reload"
         i18n-aria-label="@@reload"
@@ -45,5 +44,5 @@ import {
 })
 export class PostRefreshComponent {
   /** Emits when user clicks on the Reload button */
-  @Output() onRefresh = new EventEmitter<void>();
+  @Output() refresh = new EventEmitter<void>();
 }

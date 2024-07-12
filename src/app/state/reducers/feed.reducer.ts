@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
-import * as FeedActions from '../actions/feed.actions';
+
 import { IAd, IPost } from '../../shared/models/feed.model';
+import * as FeedActions from '../actions/feed.actions';
 
 export interface FeedState {
   posts: IPost[];
@@ -36,14 +37,15 @@ const mapPosts = (postToUpdate: IPost, state: FeedState) => {
           ...adToUpdate,
           ...postToUpdate,
         };
-      } else return postToUpdate;
+      }
+      return postToUpdate;
     }
 
     return post;
   });
 
   if (postToUpdate.isSponsored) return { ads: result as IAd[] };
-  else return { posts: result as IPost[] };
+  return { posts: result as IPost[] };
 };
 
 /**
@@ -71,35 +73,27 @@ export const feedReducer = createReducer(
     ...state,
   })),
 
-  on(FeedActions.getPostsSuccess, (state, action) => {
-    return {
-      ...state,
-      loading: false,
-      posts: action.resetPosts
-        ? action.posts
-        : state.posts.concat(action.posts),
-      totalPostPages: action.totalPages,
-    };
-  }),
-  on(FeedActions.getPostsError, (state, action) => {
-    return {
-      ...state,
-      loading: false,
-      errorFetching: true,
-    };
-  }),
+  on(FeedActions.getPostsSuccess, (state, action) => ({
+    ...state,
+    loading: false,
+    posts: action.resetPosts ? action.posts : state.posts.concat(action.posts),
+    totalPostPages: action.totalPages,
+  })),
+  on(FeedActions.getPostsError, (state) => ({
+    ...state,
+    loading: false,
+    errorFetching: true,
+  })),
   on(FeedActions.getAdsSuccess, (state, action) => ({
     ...state,
     loading: false,
     ads: action.ads,
   })),
-  on(FeedActions.getAdsError, (state, action) => {
-    return {
-      ...state,
-      loading: false,
-      errorFetching: true,
-    };
-  }),
+  on(FeedActions.getAdsError, (state) => ({
+    ...state,
+    loading: false,
+    errorFetching: true,
+  })),
   on(FeedActions.postCommentSuccess, (state, action) => ({
     ...state,
     ...mapPosts(action.post, state),

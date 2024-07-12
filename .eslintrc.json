@@ -14,8 +14,7 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:prettier/recommended"
+        "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
         "eqeqeq": "off",
@@ -41,6 +40,9 @@
         "@typescript-eslint/quotes": ["error", "single"],
         "@typescript-eslint/no-shadow": "error",
         "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/indent": "off",
+        "no-plusplus": "off",
+        "object-curly-newline": "off",
         // Angular ESLint rules
         "@angular-eslint/directive-selector": [
           "error",
@@ -56,23 +58,19 @@
             "prefix": "sf",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "operator-linebreak": "off",
+        "implicit-arrow-linebreak": "off",
+        "function-paren-newline": "off"
       }
     },
     {
       "files": ["*.html"],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
-        "plugin:@angular-eslint/template/accessibility",
-        "plugin:prettier/recommended"
+        "plugin:@angular-eslint/template/accessibility"
       ],
       "rules": {
-        "prettier/prettier": [
-          "error",
-          {
-            "parser": "angular"
-          }
-        ],
         "@angular-eslint/template/eqeqeq": ["off"]
       }
     }

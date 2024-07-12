@@ -6,17 +6,17 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Observable, tap } from 'rxjs';
-import { AuthState } from '../../state/reducers/auth.reducer';
-import { Store, select } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { Observable, tap } from 'rxjs';
+
+import { resetPassword } from '../../state/actions/auth.actions';
+import { AuthState } from '../../state/reducers/auth.reducer';
 import {
-  getLoginLoading,
   getLoginErrorType,
-  getIsLoggedIn,
+  getLoginLoading,
   getResetPasswordSuccess,
 } from '../../state/selectors/auth.selector';
-import { resetPassword } from '../../state/actions/auth.actions';
 
 /**
  * Page component for restoring password.

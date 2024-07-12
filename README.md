@@ -5,7 +5,7 @@
 - [Requirements](#requirements)
 - [Tech Stack](#tech-stack) 
 - [How to run the project](#how-to-run-the-project) 
-- [CI/CD Pipeline] (#ci/cd-pipeline)
+- [CI/CD Pipeline](#ci-cd-pipeline)
 
 ## Description
 
@@ -84,9 +84,10 @@ There's a list of all the commands available for the project:
  9. `npm run cypress:run` This runs cypress e2e testing in the terminal. 
  10. `npm run docs` Generates project documentation for the codebase in HTML format (at the ./docs folder).
 
-## CI/CD Pipeline
+## CI CD Pipeline
 For Continuous Integration and Continuous Deployment the easiest way was to implement GitHub Actions,
 in order to configured it I followed the following tutorial: https://www.youtube.com/watch?v=SMuB3qYjDUw
+
 The process consist on the following steps:
 
 1. Add build:prod script to the package.json

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
@@ -12,63 +12,72 @@
       <trans-unit id="fotgotPasswordHeader" datatype="html">
         <source>Forgot password?</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="forgotPasswordSubtitle" datatype="html">
         <source> No worries, we&apos;ll send you reset instructions. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">7,10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="forgotPasswordEmailError" datatype="html">
         <source>This email doesn&apos;t exist</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">15,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="forgotPasswordEmailSent" datatype="html">
         <source>We sent the reset instructions to your email</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">22,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="forgotPasswordEmailInput" datatype="html">
         <source>Email*</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">29,30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="forgotPasswordEmailInputError" datatype="html">
         <source>Please enter a valid email</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">36,40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="forgotPasswordResetPassword" datatype="html">
         <source> Reset password </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">44,47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="forgotPasswordBack" datatype="html">
         <source>Back to Log in</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">47,50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="authImage" datatype="html">
         <source>Social Network Illustration</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">54,55</context>
         </context-group>
         <context-group purpose="location">
@@ -83,7 +92,8 @@
       <trans-unit id="authSloganTitle" datatype="html">
         <source>Connect with everyone</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">58,59</context>
         </context-group>
         <context-group purpose="location">
@@ -98,7 +108,8 @@
       <trans-unit id="authSloganDescription" datatype="html">
         <source> Be part of this worldwide social network and don&apos;t miss anything. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">60,63</context>
         </context-group>
         <context-group purpose="location">
@@ -198,7 +209,9 @@
         <note priority="1" from="description">loginWithGoogleButton</note>
       </trans-unit>
       <trans-unit id="998893521625914999" datatype="html">
-        <source> Don&apos;t you have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/signup&quot;&gt;"/>Sign up<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <source> Don&apos;t you have an account? <x id="START_LINK" ctype="x-a"
+            equiv-text="&lt;a routerLink=&quot;/signup&quot;&gt;" />Sign up<x id="CLOSE_LINK"
+            ctype="x-a" equiv-text="&lt;/a&gt;" /></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.component.html</context>
           <context context-type="linenumber">79,81</context>
@@ -235,7 +248,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="profileBio" datatype="html">
-        <source> &quot;This is a placeholder text for design purposes. It represents the about me text from the user that usually gets edited here&quot; </source>
+        <source> &quot;This is a placeholder text for design purposes. It represents the about me
+          text from the user that usually gets edited here&quot; </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
           <context context-type="linenumber">30,32</context>
@@ -473,7 +487,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="signupError" datatype="html">
-        <source>This email doesn&apos;t exist</source>
+        <source>This email is already taken</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
           <context context-type="linenumber">15,17</context>
@@ -540,7 +554,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="loginLink" datatype="html">
-        <source> Already have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/login&quot;&gt;"/>Log in<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <source> Already have an account? <x id="START_LINK" ctype="x-a"
+            equiv-text="&lt;a routerLink=&quot;/login&quot;&gt;" />Log in<x id="CLOSE_LINK"
+            ctype="x-a" equiv-text="&lt;/a&gt;" /></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
           <context context-type="linenumber">146,148</context>
@@ -617,14 +633,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="peopleLiked" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ post?.totalLikes }}"/> People liked this</source>
+        <source><x id="INTERPOLATION" equiv-text="{{ post?.totalLikes }}" /> People liked this</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
           <context context-type="linenumber">33,35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="peopleCommented" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ post?.totalComments }}"/> Comments</source>
+        <source><x id="INTERPOLATION" equiv-text="{{ post?.totalComments }}" /> Comments</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
           <context context-type="linenumber">37,39</context>
@@ -638,7 +654,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="like" datatype="html">
-        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;i-feather name=&quot;thumbs-up&quot;&gt;"/><x id="CLOSE_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;"/>Like </source>
+        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;thumbs-up&quot;&gt;" /><x id="CLOSE_TAG_I_FEATHER"
+            ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Like </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
           <context context-type="linenumber">48,50</context>
@@ -652,7 +670,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="comment" datatype="html">
-        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;i-feather name=&quot;message-circle&quot;&gt;"/><x id="CLOSE_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;"/>Comment </source>
+        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;message-circle&quot;&gt;" /><x
+            id="CLOSE_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Comment </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
           <context context-type="linenumber">56,58</context>
@@ -666,7 +686,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="share" datatype="html">
-        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;i-feather name=&quot;share-2&quot;&gt;"/><x id="CLOSE_TAG_I_FEATHER" ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;"/>Share </source>
+        <source><x id="START_TAG_I_FEATHER" ctype="x-i_feather"
+            equiv-text="&lt;i-feather name=&quot;share-2&quot;&gt;" /><x id="CLOSE_TAG_I_FEATHER"
+            ctype="x-i_feather" equiv-text="&lt;/i-feather&gt;" />Share </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/ui/post/post.component.html</context>
           <context context-type="linenumber">63,65</context>
@@ -701,7 +723,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="fetchPostErrorDescription" datatype="html">
-        <source> This may be because of an error that we&apos;re working on to get fixed. Try to reload this page. </source>
+        <source> This may be because of an error that we&apos;re working on to get fixed. Try to
+          reload this page. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/ui/post/post.refresh.component.ts</context>
           <context context-type="linenumber">23,26</context>

@@ -71,7 +71,7 @@ export class ProfileComponent {
       .subscribe((user) => {
         this.user.set(user);
 
-        if (this.posts().length == 0) this.getData();
+        if (this.posts().length == 0) this.getData(`${user?.id}`);
       });
   }
 
@@ -86,8 +86,8 @@ export class ProfileComponent {
   /**
    * Calls for get user posts using dispatch.
    */
-  getData() {
-    this.store.dispatch(getPosts({ pageNumber: 1, userId: this.user()?.id }));
+  getData(userId: string) {
+    this.store.dispatch(getPosts({ pageNumber: 1, userId }));
   }
 
   /**

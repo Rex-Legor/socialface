@@ -547,8 +547,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="signupError" datatype="html">
-        <source>This email doesn&apos;t exist</source>
-        <target>Este correo no existe</target>
+        <source>This email is already taken</source>
+        <target>Este correo ya está en uso</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
           <context context-type="linenumber">15,17</context>

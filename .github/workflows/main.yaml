@@ -19,7 +19,7 @@ jobs:
 
       - name: Build Angular app to prod
         working-directory: .
-        run: npm install && npm run build:prod
+        run: npm install && npm run test && npm run build:prod # running tests with jest only because e2e tests with cypress are dependent on the mock server
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

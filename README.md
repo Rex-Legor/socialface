@@ -6,6 +6,7 @@
 - [Tech Stack](#tech-stack) 
 - [How to run the project](#how-to-run-the-project) 
 - [CI/CD Pipeline](#ci-cd-pipeline)
+- [Typescript Rules](#typescript-rules)
 
 ## Description
 
@@ -97,3 +98,17 @@ The process consist on the following steps:
 5. Create a new 'prod' branch and delete everything.
 6. Configure the new branch in the repository Settings > Pages in the 'Branch' section.
 7. Deploy.
+
+
+## Typescript Rules
+Added Eslint for enforcing good code quality.
+
+Here's a list of each added rule and an explanation on why was added:
+
+- `airbnb`: configuration and plugins: Used as recommended for enforcing multiple Typescript rules but disabled some rules as I think they were not necessary.
+- `unused-imports`: helps to remove unused imports (which is unused code).
+- `simple-import-sort`: sorts all imports, helps keeping things organized.
+- `typescript-eslint/quotes: [error, single]`: For using single quotes (I hate double quotes on Typescript code).
+- `@typescript-eslint/comma-dangle: off`: Keeping Eslint away from touching trailing commas, VS Code is adding them properly.
+- `unused-imports/no-unused-vars`: Not allowing to have unused vars as it is never a good idea to have unused code around.
+ 

@@ -5,6 +5,7 @@
 - [Requirements](#requirements)
 - [Tech Stack](#tech-stack) 
 - [How to run the project](#how-to-run-the-project) 
+- [CI/CD Pipeline] (#ci/cd-pipeline)
 
 ## Description
 
@@ -82,3 +83,5 @@ There's a list of all the commands available for the project:
  8. `npm run e2e` This opens cypress app for running tests in a selected browser.
  9. `npm run cypress:run` This runs cypress e2e testing in the terminal. 
  10. `npm run docs` Generates project documentation for the codebase in HTML format (at the ./docs folder).
+
+## CI/CD Pipeline

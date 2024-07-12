@@ -1,0 +1,5 @@
+**/*.spec.ts
+**/*.cy.ts
+**/*.stories.ts
+
+

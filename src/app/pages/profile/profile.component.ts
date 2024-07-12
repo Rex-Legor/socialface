@@ -1,31 +1,25 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ViewEncapsulation,
-  signal,
-} from '@angular/core';
-import { UIModule } from '../../shared/ui/ui.module';
-import { Store, select } from '@ngrx/store';
-import { AuthState } from '../../state/reducers/auth.reducer';
-import { FeedState } from '../../state/reducers/feed.reducer';
+import { Component, OnDestroy, signal, ViewEncapsulation } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
+
+import { IconsModule } from '../../shared/icons/icons.module';
 import { IPost, IPostComment } from '../../shared/models/feed.model';
 import { IUser } from '../../shared/models/user.model';
+import { UIModule } from '../../shared/ui/ui.module';
 import {
   getPosts,
-  getAds,
   postComment,
   postLike,
 } from '../../state/actions/feed.actions';
+import { AuthState } from '../../state/reducers/auth.reducer';
+import { FeedState } from '../../state/reducers/feed.reducer';
 import { getUser } from '../../state/selectors/auth.selector';
 import {
-  getFeedLoading,
-  getFeedCombinedPosts,
-  getFeedPosts,
   getFeedErrorFetching,
+  getFeedLoading,
+  getFeedPosts,
 } from '../../state/selectors/feed.selector';
-import { IconsModule } from '../../shared/icons/icons.module';
 
 /**
  * Page component for displaying user profile information and user shared posts.
@@ -39,7 +33,7 @@ import { IconsModule } from '../../shared/icons/icons.module';
   styleUrl: './profile.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnDestroy {
   posts = signal<IPost[]>([]);
   user = signal<IUser | null>(null);
   displayMenu = signal(false);
@@ -63,7 +57,9 @@ export class ProfileComponent {
     this.errorFetching$ = this.store.pipe(select(getFeedErrorFetching));
 
     this.postsSub = this.store.pipe(select(getFeedPosts)).subscribe((posts) => {
-      this.posts.set(posts);
+      this.posts.set(
+        posts.filter((post) => post.userData.id == `${this.user()?.id}`),
+      );
     });
 
     this.userSubscription = this.authStore
@@ -71,7 +67,7 @@ export class ProfileComponent {
       .subscribe((user) => {
         this.user.set(user);
 
-        if (this.posts().length == 0) this.getData(`${user?.id}`);
+        if (this.posts().length == 0 && user) this.getData();
       });
   }
 
@@ -86,8 +82,10 @@ export class ProfileComponent {
   /**
    * Calls for get user posts using dispatch.
    */
-  getData(userId: string) {
-    this.store.dispatch(getPosts({ pageNumber: 1, userId }));
+  getData() {
+    this.store.dispatch(
+      getPosts({ pageNumber: 1, userId: `${this.user()?.id}` }),
+    );
   }
 
   /**
@@ -133,5 +131,6 @@ export class ProfileComponent {
    * @param item
    * @returns post id
    */
+  // eslint-disable-next-line class-methods-use-this
   trackByPostId = (index: number, item: IPost) => item.id;
 }

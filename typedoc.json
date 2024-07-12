@@ -1,6 +1,0 @@
-{
-  "entryPoints": ["./src"],
-  "name": "Social Face Documentation",
-  "entryPointStrategy": "expand",
-  "includeVersion": true
-}
